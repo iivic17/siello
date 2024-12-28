@@ -70,7 +70,7 @@ body {
   display: grid;
 
   /* 1 column on each side (1fr) + 8 columns in the middle */
-  grid-template-columns: 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
+  grid-template-columns: 1fr repeat(8, minmax(min-content, 16rem)) 1fr;
   grid-template-rows: auto;
   min-height: 100vh;
 
@@ -270,7 +270,11 @@ p:not(:first-of-type) {
 .about-section .content-container {
   grid-column: 2 / 7;
   padding: var(--spacing-128) 0;
-  padding-right: var(--spacing-64);
+  padding-right: var(--spacing-128);
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-section .image-container {
@@ -303,6 +307,12 @@ p:not(:first-of-type) {
 
 .why-choose-us-section .content-container {
   grid-column: 5 / 10;
+  padding: var(--spacing-128) 0;
+  padding-left: var(--spacing-128);
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ------------------------------------------------
