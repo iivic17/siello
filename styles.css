@@ -97,7 +97,7 @@ ul {
   list-style: none;
 }
 
-/* Headings */
+/* Typography */
 .heading {
   color: var(--color-orange);
   text-transform: uppercase;
@@ -120,8 +120,17 @@ ul {
   font-weight: 200;
 }
 
-.p {
+p {
   color: inherit;
+  display: inline-block;
+}
+
+p:first-of-type {
+  margin-top: var(--spacing-32);
+}
+
+p:not(:first-of-type) {
+  margin-top: var(--spacing-16);
 }
 
 /* Buttons */
@@ -260,6 +269,8 @@ ul {
 
 .about-section .content-container {
   grid-column: 2 / 7;
+  padding: var(--spacing-128) 0;
+  padding-right: var(--spacing-64);
 }
 
 .about-section .image-container {
