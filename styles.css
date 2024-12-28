@@ -474,7 +474,6 @@ p:not(:first-of-type) {
 /* ------------------------------------------------
    DIGITAL PRESENCE SECTION
 --------------------------------------------------- */
-
 .digital-presence-section {
   display: grid;
   align-items: center;
@@ -494,13 +493,29 @@ p:not(:first-of-type) {
   position: relative;
 }
 
-.digital-presence-section .content-container {
-  grid-column: 5 / 10;
-}
-
 .digital-presence-section .image-container img {
   height: 100%;
   position: absolute;
+}
+
+.digital-presence-section .content-container {
+  grid-column: 5 / 10;
+  padding: var(--spacing-128) 0;
+  padding-left: var(--spacing-128);
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.digital-presence-heading {
+  margin-top: var(--spacing-24);
+  line-height: 1;
+}
+
+.digital-presence-subheading {
+  font-weight: 1000;
+  font-size: var(--fz-heading-s);
 }
 
 /* ------------------------------------------------
