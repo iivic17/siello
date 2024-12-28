@@ -454,6 +454,12 @@ p:not(:first-of-type) {
 
 .impact-section .content-container {
   grid-column: 2 / 7;
+  padding: var(--spacing-128) 0;
+  padding-right: var(--spacing-128);
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .impact-section .image-container {
@@ -509,6 +515,12 @@ p:not(:first-of-type) {
 
 .next-level-section .content-container {
   grid-column: 2 / 7;
+  padding: var(--spacing-128) 0;
+  padding-right: var(--spacing-128);
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .next-level-section .image-container {
