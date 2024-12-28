@@ -1,16 +1,559 @@
+/* ------------------------------------------------
+   GLOBAL RESET & ROOT VARIABLES
+--------------------------------------------------- */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+/* 1rem = 10px */
+:root {
+  font-size: 62.5%; /* => 1rem = 10px */
+  --color-dark: #1d1d1d;
+  --color-orange: #ff6a00;
+  --color-light: #f5efe7;
+  --color-white: #ffffff;
+  --color-gray: #ccc;
+
+  /* Example font sizes (adjust as desired) */
+  --fz-base: 1.6rem; /* 16px */
+  --fz-heading: 3.2rem; /* 32px */
+  --fz-subheading: 2.4rem; /* 24px */
+
+  /* Example spacing scale */
+  --spacing-section: 4rem;
+  --spacing-element: 2rem;
+  --spacing-s: 1rem;
+  --spacing-m: 2rem;
+  --spacing-l: 3rem;
+  --spacing-xl: 4rem;
+}
+
+/* ------------------------------------------------
+   BODY & GRID LAYOUT
+--------------------------------------------------- */
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    line-height: 1.6;
+  display: grid;
+  /* 1 column on each side (1fr) + 8 columns in the middle */
+  grid-template-columns: 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
+  grid-template-rows: auto;
+  min-height: 100vh;
+
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: var(--fz-base);
+
+  position: relative;
+}
+
+/*
+  By default, direct children of body (header, main, footer)
+  will NOT automatically occupy the middle 8 columns.
+  We must specify grid-column for them.
+*/
+header,
+.section,
+footer {
+  grid-column: 2 / 10; /* middle 8 columns */
+}
+
+/* Headings, paragraphs, lists, etc. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: var(--spacing-s);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-light);
+}
+
+p {
+  margin-bottom: var(--spacing-s);
+}
+
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--color-orange);
+  color: var(--color-dark);
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #e65e00; /* Darker orange on hover */
+}
+
+/* Underline or highlight classes (for text embellishment) */
+.underline {
+  position: relative;
+}
+
+.highlight {
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* ------------------------------------------------
+   HEADER & HERO
+--------------------------------------------------- */
+/* Let the hero section span the entire width if desired */
+.header-section {
+  grid-column: 1 / -1; /* Overwrite the default, so hero is full width */
+  position: relative;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 12rem;
+  right: 6rem;
+  z-index: 1000;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--spacing-s);
+  flex-direction: column;
+  text-align: right;
+}
+
+.nav-link {
+  font-size: var(--fz-base);
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--color-light);
+  position: relative;
+}
+
+/* Example "active" highlight for nav link */
+.nav-link.active {
+  color: var(--color-orange);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* or enough to fill the viewport */
+  overflow: hidden;
+}
+
+/* The hero video */
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The hero content overlay */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-light);
+  max-width: 60rem;
+  padding: var(--spacing-s);
+}
+
+.hero-logo {
+  max-width: 10rem;
+  margin-bottom: var(--spacing-s);
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-m);
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------
+   ABOUT SECTION
+--------------------------------------------------- */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.about-section .content-container {
+  flex: 1 1 40rem;
+}
+
+.about-section .image-container {
+  flex: 1 1 40rem;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------
+   WHY CHOOSE US SECTION
+--------------------------------------------------- */
+.why-choose-us-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.why-choose-us-section .image-container {
+  flex: 1 1 40rem;
+}
+
+.why-choose-us-section .content-container {
+  flex: 1 1 40rem;
+}
+
+.why-choose-us-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------
+   SERVICES / CAROUSEL SECTION
+--------------------------------------------------- */
+.services-section {
+  /* This one can be normal flow unless you want side-by-side
+     Because you have a heading + carousel list. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-section .carousel-content {
+  text-align: center;
+  margin-bottom: var(--spacing-l);
+  max-width: 70rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* so the fade-out effect can appear */
+}
+
+.carousel {
+  display: flex;
+  gap: var(--spacing-m);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: var(--spacing-s) 0;
+}
+
+.card {
+  min-width: 28rem; /* So we see them as “cards” horizontally */
+  background-color: #2a2a2a;
+  border-radius: 0.5rem;
+  padding: var(--spacing-m);
+  flex-shrink: 0;
+}
+
+.card-icon {
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: var(--spacing-s);
+  background-color: var(--color-orange);
+  border-radius: 0.3rem;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-s);
+}
+
+.card-bullet-list li {
+  margin-left: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-orange);
+}
+
+/* Horizontal fade on carousel edges (optional) */
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5rem; /* adjust as needed */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-dark) 0%,
+    rgba(29, 29, 29, 0) 100%
+  );
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--color-dark) 0%,
+    rgba(29, 29, 29, 0) 100%
+  );
+}
+
+/* ------------------------------------------------
+   CTA SECTION
+--------------------------------------------------- */
+#cta {
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 3.6rem;
+  margin-bottom: var(--spacing-m);
+}
+
+/* ------------------------------------------------
+   IMPACT SECTION
+--------------------------------------------------- */
+.impact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  align-items: center;
+}
+
+.impact-content-container,
+.impact-section .image-container {
+  flex: 1 1 40rem;
+}
+
+.impact-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------
+   DIGITAL PRESENCE SECTION
+--------------------------------------------------- */
+.digital-presence-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  align-items: center;
+}
+
+.digital-presence-image {
+  width: 100%;
+  object-fit: cover;
+  flex: 1 1 40rem;
+}
+
+/* ------------------------------------------------
+   NEXT LEVEL SECTION
+--------------------------------------------------- */
+.next-level-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  align-items: center;
+}
+
+.next-level-section .content-container,
+.next-level-section .image-container {
+  flex: 1 1 40rem;
+}
+
+.next-level-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------
+   CONTACT SECTION
+--------------------------------------------------- */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  align-items: center;
+}
+
+.contact-section .content-container {
+  flex: 1 1 40rem;
+}
+
+.contact-heading {
+  margin-bottom: var(--spacing-m);
+  text-transform: uppercase;
+}
+
+.contact-intro {
+  margin-bottom: var(--spacing-m);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  max-width: 40rem;
+}
+
+.contact-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: var(--color-light);
+  font-size: var(--fz-base);
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: 2px solid var(--color-orange);
+}
+
+/* ------------------------------------------------
+   FOOTER SECTION
+--------------------------------------------------- */
+.footer-section {
+  grid-column: 1 / -1; /* Overwrites the default so it spans full width */
+  background-color: #2a2a2a;
+  padding: var(--spacing-m) 0;
+}
+
+.footer-container {
+  /* We still want the actual footer content in the middle. */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-m);
+
+  /* Center inside the 8 columns for the main content area */
+  grid-column: 2 / 10;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+/* Social icons row */
+.footer-social p {
+  margin-bottom: var(--spacing-s);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--spacing-s);
+}
+
+.social-link {
+  color: var(--color-light);
+}
+
+.footer-logo {
+  max-width: 12rem;
+  margin: 0 auto;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav-link {
+  color: var(--color-light);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Footer bottom line */
+.footer-bottom {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: var(--spacing-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-m);
+}
+
+.footer-separator {
+  flex: 1;
+  border: 0;
+  height: 1px;
+  background-color: #444;
+}
+
+.footer-copyright {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--color-gray);
 }

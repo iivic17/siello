@@ -2,275 +2,509 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Siello - Elevating your digital heartbeat. Empower your brand with content, strategy, and analytics."
     />
     <meta name="author" content="Siello" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siello - Elevating Your Digital Heartbeat</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
-    <!-- Header Section -->
-    <header role="banner">
+    <div id="top"></div>
+
+    <!-- HEADER SECTION -->
+    <header class="header-section" role="banner">
+      <!-- Sticky Navigation -->
       <nav aria-label="Main navigation" class="sticky-nav">
-        <ul>
-          <li><a href="#about">Who Are We</a></li>
-          <li><a href="#why-choose-us">Why Choose Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#impact">Learn More</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+        <ul class="nav-list">
+          <li>
+            <a href="#about" data-section="about" class="nav-link"
+              >Who Are We</a
+            >
+          </li>
+          <li>
+            <a
+              href="#why-choose-us"
+              data-section="why-choose-us"
+              class="nav-link"
+              >Why Choose Us</a
+            >
+          </li>
+          <li>
+            <a href="#services" data-section="services" class="nav-link"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#impact" data-section="impact" class="nav-link"
+              >Learn More</a
+            >
+          </li>
+          <li>
+            <a href="#contact" data-section="contact" class="nav-link"
+              >Contact Us</a
+            >
+          </li>
         </ul>
       </nav>
+      <!-- Hero Section with Video -->
       <div class="hero">
-        <video autoplay muted loop>
+        <video
+          autoplay
+          muted
+          loop
+          poster="./assets/hero-poster.jpg"
+          class="hero-video"
+        >
           <source src="./assets/hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <p>
+            Your browser does not support the video tag. Please
+            <a href="#about">learn more about us</a>.
+          </p>
         </video>
-        <div class="content">
+
+        <div class="hero-content">
+          <!-- Optional short description beneath the video -->
           <div class="video-description">
-            <p>
+            <p class="hidden">
               The hero video showcases a montage of empowering digital solutions
-              provided by Siello, including vibrant office scenes and creative
-              content visuals.
+              by Siello: vibrant office scenes and creative content visuals.
             </p>
           </div>
-          <a href="#" aria-label="Go to top of the page"
-            ><img src="./assets/logo.png" alt="Siello logo" class="logo"
-          /></a>
-          <h1>Elevating Your<br />Digital <span>Heartbeat</span></h1>
-          <a href="#contact" class="cta" aria-label="Book a free consultation"
-            >Book a <strong>Free</strong> Consultation</a
+
+          <!-- Logo -->
+          <a href="#top" aria-label="Go to top of the page">
+            <img src="./assets/logo.png" alt="Siello logo" class="hero-logo" />
+          </a>
+
+          <!-- Main Hero Text -->
+          <h1 class="hero-title">
+            Elevating Your<br />
+            Digital <span class="underline">Heartbeat</span>
+          </h1>
+
+          <!-- CTA Button -->
+          <a
+            href="#contact"
+            class="btn cta-btn"
+            aria-label="Book a free consultation"
           >
+            Book a <strong class="highlight">FREE</strong> Consultation
+          </a>
         </div>
       </div>
     </header>
 
-    <main role="main">
-      <!-- About Section -->
-      <section id="about" class="section" aria-labelledby="about-heading">
-        <div class="content-container">
-          <h3 class="subheading">Our Brand Story</h3>
-          <h2 id="about-heading" class="heading">Who Are We?</h2>
-          <p>
-            <strong>Siello</strong> was built to do things differently.<br />
-            We&#39;re here to cut through the noise and create work that&#39;s
-            not just noticed <strong>but remembered.</strong>
-          </p>
-          <p>
-            We&#39;re all about
-            <strong>honest, collaborative</strong> partnerships that lead to
-            standout results, minus the usual agency drama.
-          </p>
-        </div>
-        <div class="image-container">
-          <img src="./assets/about.jpg" alt="About Siello" />
-        </div>
-      </section>
+    <!-- ABOUT SECTION -->
+    <section
+      id="about"
+      class="section about-section"
+      aria-labelledby="about-heading"
+    >
+      <div class="content-container">
+        <h3 class="subheading">Our Brand Story</h3>
+        <h2 id="about-heading" class="heading">Who Are We?</h2>
+        <p>
+          <strong>Sièllo</strong> was built to do things differently.<br />
+          We’re here to cut through the noise and create work that’s not just
+          <strong>noticed</strong> but <strong>remembered</strong>.
+        </p>
+        <p>
+          We’re all about
+          <strong>honest, <em>collaborative</em></strong> partnerships that lead
+          to standout results, minus the usual agency drama.
+        </p>
+      </div>
+      <div class="image-container">
+        <img src="./assets/about.jpg" alt="About Siello" class="about-image" />
+      </div>
+    </section>
 
-      <!-- Why Choose Us Section -->
-      <section
-        id="why-choose-us"
-        class="section"
-        aria-labelledby="why-choose-us-heading"
-      >
-        <div class="image-container">
-          <img src="./assets/why-choose-us.jpg" alt="Why Choose Us" />
-        </div>
-        <div class="content-container">
-          <h3 class="subheading">Quality Over Quantity</h3>
-          <h2 id="why-choose-us-heading" class="heading">Why Choose Us?</h2>
-          <p>
-            We&#39;re selective because we believe in giving every client our
-            full
-            <strong>attention and expertise.</strong>
-          </p>
-          <p>
-            Our approach isn&#39;t about taking on as many projects as possible;
-            it&#39;s about dedicating ourselves to each brand we work with.
-          </p>
-          <p>
-            This commitment ensures every strategy is finely tuned, every
-            campaign is impactful, and
-            <strong>every result exceeds expectations.</strong>
-          </p>
-        </div>
-      </section>
+    <!-- WHY CHOOSE US SECTION -->
+    <section
+      id="why-choose-us"
+      class="section why-choose-us-section"
+      aria-labelledby="why-choose-us-heading"
+    >
+      <div class="image-container">
+        <img
+          src="./assets/why-choose-us.jpg"
+          alt="Why Choose Us"
+          class="why-choose-us-image"
+        />
+      </div>
+      <div class="content-container">
+        <h3 class="subheading">Quality Over Quantity</h3>
+        <h2 id="why-choose-us-heading" class="heading">Why Choose Us?</h2>
+        <p>
+          We’re selective because we believe in giving every client our
+          <strong>full attention and expertise.</strong>
+        </p>
+        <p>
+          Our approach isn’t about taking on as many projects as possible; it’s
+          about dedicating ourselves to each brand we work with.
+        </p>
+        <p>
+          This commitment ensures every strategy is finely tuned, every campaign
+          is impactful, and
+          <strong>every result exceeds expectations.</strong>
+        </p>
+      </div>
+    </section>
 
-      <!-- Carousel Section -->
-      <section id="services" class="section" aria-labelledby="services-heading">
+    <!-- CAROUSEL / SERVICES SECTION -->
+    <section
+      id="services"
+      class="section services-section"
+      aria-labelledby="services-heading"
+    >
+      <div class="carousel-content">
         <h3 class="subheading">Bringing Your Vision to Life</h3>
         <h2 id="services-heading" class="heading">
           Designed to Elevate Your Brand
         </h2>
-        <p>
+        <p class="intro-text">
           We deliver solutions that make your brand stand out, connect with your
           audience, and stay ahead in a competitive digital world.
         </p>
-        <div class="carousel-container">
-          <ul class="carousel" aria-label="Service Cards">
-            <li class="card">Content Creation</li>
-            <li class="card">Digital Campaigns</li>
-            <li class="card">Brand Identity</li>
-            <li class="card">Social Media Strategy</li>
-            <li class="card">Analytics Reporting</li>
-            <li class="card">Photography</li>
-            <li class="card">Community Management</li>
-          </ul>
-        </div>
-      </section>
+      </div>
 
-      <!-- CTA Section -->
-      <section id="cta" class="section" aria-labelledby="cta-heading">
-        <div class="content-container">
-          <h2 id="cta-heading">
-            Give Your Brand the <br />
-            Digital Voice <span>It Deserves</span>
-          </h2>
-          <a href="#contact" class="cta" aria-label="Get in touch now"
-            >Get in Touch <strong>Now</strong></a
-          >
-        </div>
-      </section>
+      <!-- Carousel Container -->
+      <div class="carousel-container">
+        <ul class="carousel" aria-label="Service Cards">
+          <!-- Card 1 -->
+          <li class="card card-content-creation">
+            <div class="card-icon">
+              <!-- Icon would go here -->
+            </div>
+            <h4 class="card-title">Content Creation</h4>
+            <p>
+              Not just pretty pictures. We create meaningful content that speaks
+              to your audience and reflects your brand’s true voice, because
+              every post counts.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Speaks directly to your audience</li>
+              <li>Reflects your brand’s true voice</li>
+              <li>Makes every post count</li>
+            </ul>
+          </li>
 
-      <!-- Impact Section -->
-      <section id="impact" class="section" aria-labelledby="impact-heading">
-        <div class="content-container">
-          <h3 class="subheading">Stay Ahead & Get Noticed</h3>
-          <h2 id="impact-heading" class="heading">Create Impact</h2>
-          <p>
-            Because in today&#39;s world,
-            <strong>if you&#39;re not online, you&#39;re invisible.</strong>
-          </p>
-          <p>
-            A strong digital presence is the bridge between your brand and your
-            audience, a space to build trust, spark engagement, and drive
-            growth.
-          </p>
-        </div>
-        <div class="image-container">
-          <img src="./assets/impact.jpg" alt="Create Impact" />
-        </div>
-      </section>
+          <!-- Card 2 -->
+          <li class="card card-digital-campaigns">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Digital Campaigns</h4>
+            <p>
+              From concept to execution, we run digital campaigns that hit the
+              mark. Whether it’s paid ads or organic growth, we make sure your
+              message is seen by the right eyes.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Go from concept to execution</li>
+              <li>Combine ads &amp; organic strategies</li>
+              <li>Reach the right audience</li>
+            </ul>
+          </li>
 
-      <!-- Digital Presence Section -->
-      <section
-        id="digital-presence"
-        class="section"
-        aria-labelledby="digital-presence-heading"
-      >
-        <div class="image-container">
-          <img src="./assets/digital-presence.png" alt="Digital Presence" />
-        </div>
-        <div class="content-container">
-          <h3 id="digital-presenec-subheading">
-            Digital Presence is the<br />Heartbeat of Modern Business
-          </h3>
-          <h2 id="digital-presence-heading">
-            We&#39;re the One<br />Who Keeps It Pumping
-          </h2>
-        </div>
-      </section>
+          <!-- Card 3 -->
+          <li class="card card-brand-identity">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Brand Identity</h4>
+            <p>
+              Your brand isn’t just a logo, it's a feeling. We help shape your
+              visual identity, tone, and presence to make sure your brand stands
+              out in all the right ways.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Shape a memorable visual identity</li>
+              <li>Define a unique tone and voice</li>
+              <li>Stand out in all the right ways</li>
+            </ul>
+          </li>
 
-      <!-- Next Level Section -->
-      <section
-        id="next-level"
-        class="section"
-        aria-labelledby="next-level-heading"
-      >
-        <div class="content-container">
-          <h3 class="subheading">Take Your Digital Presence</h3>
-          <h2 id="next-level-heading">To the Next Level</h2>
-          <p>
-            It&#39;s more than just <strong>being seen</strong>; it&#39;s about
-            <strong>being heard</strong>, creating connections, and
-            <strong>staying relevant</strong> in a rapidly evolving digital
-            landscape.
-          </p>
-          <p>
-            With the right strategy, visibility turns into influence, and
-            engagement transforms into <strong>measurable results</strong>.
-          </p>
-        </div>
-        <div class="image-container">
-          <img src="./assets/next-level.jpg" alt="To the Next Level" />
-        </div>
-      </section>
+          <!-- Card 4 -->
+          <li class="card card-social-strategy">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Social Media Strategy</h4>
+            <p>
+              We build strategies that make noise and drive results. It’s about
+              creating a smart, sustainable approach to grow your audience and
+              keep them engaged.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Make noise and drive results</li>
+              <li>Focus on smart, sustainable growth</li>
+              <li>Keep your audience engaged</li>
+            </ul>
+          </li>
 
-      <!-- Contact Form Section -->
-      <section id="contact" class="section" aria-labelledby="contact-heading">
-        <div class="content-container">
-          <h2 id="contact-heading">
-            Let&#39;s Work<br /><span>Together</span>
-          </h2>
-          <p>
-            Book a <strong>free consultation</strong> with us to discuss how we
-            can help your brand connect, engage, and grow. It&#39;s just a
-            conversation, no strings attached.
-          </p>
-          <form action="#" method="post" aria-label="Contact form">
-            <label for="name" lang="en">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name here..."
-              required
-            />
+          <!-- Card 5 -->
+          <li class="card card-analytics-reporting">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Analytics Reporting</h4>
+            <p>
+              We don’t just do things for the sake of doing them. We measure
+              success with data and adjust our strategy to make sure we’re
+              always delivering the best results.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Measuring success with data</li>
+              <li>Strategies for optimal performance</li>
+              <li>Ensuring every move delivers impact</li>
+            </ul>
+          </li>
 
-            <label for="email" lang="en">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email here..."
-              required
-            />
+          <!-- Card 6 -->
+          <li class="card card-photography">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Photography / Videography</h4>
+            <p>
+              Through photography and videography we capture the moments, moods,
+              and details that make your brand unforgettable.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Capture moments and moods</li>
+              <li>Highlight the essence of your brand</li>
+              <li>Make your brand unforgettable</li>
+            </ul>
+          </li>
 
-            <label for="message" lang="en">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Enter a message..."
-              rows="5"
-              required
-            ></textarea>
+          <!-- Card 7 -->
+          <li class="card card-community-management">
+            <div class="card-icon"></div>
+            <h4 class="card-title">Community Management</h4>
+            <p>
+              Engagement isn’t just about posting. We actively manage your
+              community, fostering conversations that strengthen relationships
+              and build brand loyalty.
+            </p>
+            <ul class="card-bullet-list">
+              <li>Fostering meaningful conversations</li>
+              <li>Building strong relationships</li>
+              <li>Strengthening brand loyalty</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </section>
-    </main>
+    <!-- CTA SECTION -->
+    <section id="cta" class="section cta-section" aria-labelledby="cta-heading">
+      <div class="cta-container">
+        <h2 id="cta-heading" class="cta-title">
+          Give Your Brand the <br />
+          Digital Voice <span class="underline">It Deserves</span>
+        </h2>
+        <a href="#contact" class="btn cta-btn" aria-label="Get in touch now">
+          Get in Touch <strong class="highlight">Now</strong>
+        </a>
+      </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer role="contentinfo">
+    <!-- IMPACT SECTION -->
+    <section
+      id="impact"
+      class="section impact-section"
+      aria-labelledby="impact-heading"
+    >
+      <div class="impact-content-container">
+        <h3 class="subheading">Stay Ahead &amp; Get Noticed</h3>
+        <h2 id="impact-heading" class="heading">Create Impact</h2>
+        <p>
+          Because in today’s world,
+          <strong>if you’re not online, you’re invisible.</strong>
+        </p>
+        <p>
+          A strong digital presence is the bridge between your brand and your
+          audience, a space to build trust, spark engagement, and drive growth.
+        </p>
+      </div>
+      <div class="image-container">
+        <img
+          src="./assets/impact.jpg"
+          alt="Create Impact"
+          class="impact-image"
+        />
+      </div>
+    </section>
+
+    <!-- DIGITAL PRESENCE SECTION -->
+    <section
+      id="digital-presence"
+      class="section digital-presence-section"
+      aria-labelledby="digital-presence-heading"
+    >
+      <div class="image-container">
+        <img
+          src="./assets/digital-presence.png"
+          alt="Digital Presence"
+          class="digital-presence-image"
+        />
+      </div>
+      <div class="content-container">
+        <h3 id="digital-presenec-subheading" class="subheading">
+          Digital Presence is the<br />
+          Heartbeat of Modern Business
+        </h3>
+        <h2 id="digital-presence-heading" class="heading">
+          We’re the One<br />
+          Who Keep It Pumping
+        </h2>
+      </div>
+    </section>
+
+    <!-- NEXT LEVEL SECTION -->
+    <section
+      id="next-level"
+      class="section next-level-section"
+      aria-labelledby="next-level-heading"
+    >
+      <div class="content-container">
+        <h3 class="subheading">Take Your Digital Presence</h3>
+        <h2 id="next-level-heading" class="heading">To the Next Level</h2>
+        <p>
+          It’s more than just <strong>being seen</strong>; it’s about
+          <strong>being heard</strong>, creating connections, and
+          <strong>staying relevant</strong> in a rapidly evolving digital
+          landscape.
+        </p>
+        <p>
+          With the right strategy, visibility turns into influence, and
+          engagement transforms into <strong>measurable results</strong>.
+        </p>
+      </div>
+      <div class="image-container">
+        <img
+          src="./assets/next-level.jpg"
+          alt="To the Next Level"
+          class="next-level-image"
+        />
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section
+      id="contact"
+      class="section contact-section"
+      aria-labelledby="contact-heading"
+    >
+      <div class="content-container">
+        <h2 id="contact-heading" class="heading contact-heading">
+          LETS WORK<br /><span class="highlight">TOGETHER</span>
+        </h2>
+        <p class="contact-intro">
+          Book a <strong>free consultation</strong> with us to discuss how we
+          can help your brand connect, engage, and grow. It’s just a
+          conversation, no strings attached.
+        </p>
+
+        <!-- Contact Form -->
+        <form
+          action="#"
+          method="post"
+          aria-label="Contact form"
+          class="contact-form"
+        >
+          <label for="name" lang="en" class="contact-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name here..."
+            required
+            class="contact-input"
+          />
+
+          <label for="email" lang="en" class="contact-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email here..."
+            required
+            class="contact-input"
+          />
+
+          <label for="message" lang="en" class="contact-label">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Enter a message..."
+            rows="5"
+            required
+            class="contact-textarea"
+          ></textarea>
+
+          <button type="submit" class="btn submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-section" role="contentinfo">
       <div class="footer-container">
+        <!-- Left Side -->
         <div class="footer-left">
-          <p><a href="mailto:office@siello.rs">office@siello.rs</a></p>
-          <p>Belgrade, Serbia</p>
+          <p class="footer-contact-item">
+            <span class="footer-icon">✉</span>
+            <a href="mailto:office@siello.rs" class="footer-link"
+              >office@siello.rs</a
+            >
+          </p>
+          <p class="footer-contact-item">
+            <span class="footer-icon">📍</span>Belgrade, Serbia
+          </p>
+          <div class="footer-social">
+            <p>Follow us on</p>
+            <div class="social-icons">
+              <!-- You’d replace # with actual social links -->
+              <a href="#" class="social-link" aria-label="LinkedIn"
+                >LinkedIn icon</a
+              >
+              <a href="#" class="social-link" aria-label="Instagram"
+                >Instagram icon</a
+              >
+              <a href="#" class="social-link" aria-label="TikTok"
+                >TikTok icon</a
+              >
+            </div>
+          </div>
         </div>
+
+        <!-- Center -->
         <div class="footer-center">
-          <a href="#" aria-label="Go to top of the page"
-            ><img
+          <a href="#top" aria-label="Go to top of the page">
+            <img
               src="./assets/full-logo.png"
               alt="Siello full logo"
-              class="logo-full"
-          /></a>
+              class="footer-logo"
+            />
+          </a>
         </div>
+
+        <!-- Right Side -->
         <div class="footer-right">
-          <p>Navigation</p>
-          <ul>
-            <li><a href="#about">Who Are We</a></li>
-            <li><a href="#why-choose-us">Why Choose Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#impact">Learn More</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+          <p class="footer-nav-title">Navigation</p>
+          <ul class="footer-nav-list">
+            <li><a href="#about" class="footer-nav-link">Who Are We</a></li>
+            <li>
+              <a href="#why-choose-us" class="footer-nav-link">Why Choose Us</a>
+            </li>
+            <li><a href="#services" class="footer-nav-link">Services</a></li>
+            <li><a href="#impact" class="footer-nav-link">Learn More</a></li>
+            <li><a href="#contact" class="footer-nav-link">Contact Us</a></li>
           </ul>
         </div>
       </div>
-      <div>Copyright &#169; 2024 by Siello.</div>
+      <div class="footer-bottom">
+        <hr class="footer-separator" />
+        <p class="footer-copyright">Copyright &copy; 2024 by Siello.</p>
+        <hr class="footer-separator" />
+      </div>
     </footer>
   </body>
 </html>
