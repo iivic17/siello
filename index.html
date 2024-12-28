@@ -10,12 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siello - Elevating Your Digital Heartbeat</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400..700&family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400..700&family=Mulish:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
-    
+
     <script src="script.js" defer></script>
   </head>
 
@@ -23,7 +26,7 @@
     <div id="top"></div>
 
     <!-- HEADER SECTION -->
-    <header class="section header-section" role="banner">
+    <header class="section hero-section" role="banner">
       <!-- Sticky Navigation -->
       <nav aria-label="Main navigation" class="sticky-nav">
         <ul class="nav-list">
@@ -57,8 +60,9 @@
           </li>
         </ul>
       </nav>
+
       <!-- Hero Section with Video -->
-      <div class="hero">
+      <div class="hero-wrapper">
         <video
           autoplay
           muted
@@ -72,25 +76,24 @@
             <a href="#about">learn more about us</a>.
           </p>
         </video>
+        <!-- Optional short description beneath the video -->
+        <div class="video-description">
+          <p class="hidden">
+            The hero video showcases a montage of empowering digital solutions
+            by Siello: vibrant office scenes and creative content visuals.
+          </p>
+        </div>
 
         <div class="hero-content">
-          <!-- Optional short description beneath the video -->
-          <div class="video-description">
-            <p class="hidden">
-              The hero video showcases a montage of empowering digital solutions
-              by Siello: vibrant office scenes and creative content visuals.
-            </p>
-          </div>
-
           <!-- Logo -->
-          <a href="#top" aria-label="Go to top of the page">
+          <a href="#top" aria-label="Go to top of the page" class="logo-link">
             <img src="./assets/logo.png" alt="Siello logo" class="hero-logo" />
           </a>
 
           <!-- Main Hero Text -->
-          <h1 class="hero-title">
+          <h1 class="heading hero-heading">
             Elevating Your<br />
-            Digital <span class="underline">Heartbeat</span>
+            Digital <span class="emphasized">Heartbeat</span>
           </h1>
 
           <!-- CTA Button -->
@@ -331,10 +334,7 @@
       aria-labelledby="digital-presence-heading"
     >
       <div class="image-container">
-        <img
-          src="./assets/digital-presence.png"
-          alt="Digital Presence"
-        />
+        <img src="./assets/digital-presence.png" alt="Digital Presence" />
       </div>
       <div class="content-container">
         <h3 id="digital-presenec-subheading" class="subheading">
@@ -368,8 +368,7 @@
           engagement transforms into <strong>measurable results</strong>.
         </p>
       </div>
-      <div class="image-container">
-      </div>
+      <div class="image-container"></div>
     </section>
 
     <!-- CONTACT SECTION -->

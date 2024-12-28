@@ -3,9 +3,9 @@
 --------------------------------------------------- */
 
 @font-face {
-  font-family: 'Cy Grotesk Grand Dark';
-  src: url('./assets/fonts/CyGrotesk-GrandDark.woff2') format('woff2'),
-       url('./assets/CyGrotesk-GrandDark.woff') format('woff');
+  font-family: "Cy Grotesk Grand Dark";
+  src: url("./assets/fonts/CyGrotesk-GrandDark.woff2") format("woff2"),
+    url("./assets/CyGrotesk-GrandDark.woff") format("woff");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -38,19 +38,23 @@
 
   --ff-mulish: "Mulish", serif;
   --ff-arimo: "Arimo", serif;
-  --ff-grotesk: 'Cy Grotesk Grand Dark', sans-serif;
+  --ff-grotesk: "Cy Grotesk Grand Dark", sans-serif;
 
   --lh-base: 1.8;
+  --lh-hero-heading: 1;
   --lh-heading: 1.2;
   --lh-subheading: 1;
 
-
-  --spacing-section: 4rem;
-  --spacing-element: 2rem;
-  --spacing-s: 1rem;
-  --spacing-m: 2rem;
-  --spacing-l: 3rem;
-  --spacing-xl: 4rem;
+  --spacing-4: 0.4rem;
+  --spacing-8: 0.8rem;
+  --spacing-16: 1.6rem;
+  --spacing-24: 2.4rem;
+  --spacing-32: 3.2rem;
+  --spacing-48: 4.8rem;
+  --spacing-64: 6.4rem;
+  --spacing-80: 8rem;
+  --spacing-96: 9.6rem;
+  --spacing-128: 12.8rem;
 }
 
 /* ------------------------------------------------
@@ -101,7 +105,7 @@ ul {
   font-size: var(--fz-heading-m);
   font-family: var(--ff-grotesk);
   line-height: var(--lh-heading);
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   font-weight: 800;
 }
 
@@ -139,10 +143,6 @@ ul {
 }
 
 /* Utilities */
-.underline {
-  position: relative;
-}
-
 .highlight {
   color: var(--color-orange);
   font-weight: 700;
@@ -153,12 +153,65 @@ ul {
 }
 
 /* ------------------------------------------------
-   HEADER & HERO
+   HERO
 --------------------------------------------------- */
-.header-section {
+.hero-section {
   position: relative;
 }
 
+.hero-wrapper {
+  width: 100%;
+  height: 80vh;
+}
+
+.hero-content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--color-gray);
+}
+
+.video-description {
+  position: absolute;
+  top: 0;
+}
+
+.logo-link {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo {
+  max-width: 16rem;
+  display: inline-block;
+}
+
+.hero-heading {
+  font-size: var(--fz-heading-xl);
+  line-height: var(--lh-hero-heading);
+  color: inherit;
+  margin-top: var(--spacing-64);
+}
+
+.hero-content .btn {
+  margin-top: var(--spacing-96);
+}
+
+/* ------------------------------------------------
+   STICKY NAV
+--------------------------------------------------- */
 .sticky-nav {
   position: fixed;
   top: 12rem;
@@ -181,46 +234,6 @@ ul {
 
 .nav-link.active {
   color: var(--color-orange);
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: var(--color-gray);
-}
-
-.video-description {
-  position: absolute;
-}
-
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: var(--color-light);
-}
-
-.hero-logo {
-  max-width: 10rem;
-}
-
-.hero-title {
-  text-transform: uppercase;
-  font-optical-sizing: auto;
-  font-size: var(--fz-heading-xl);
-  font-family: var(--ff-grotesk);
-  line-height: var(--lh-heading);
-  letter-spacing: -2px;
-  font-weight: 800;
 }
 
 /* ------------------------------------------------
