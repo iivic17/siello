@@ -15,7 +15,7 @@
   --color-orange: rgb(249, 125, 3);
   --color-light: rgb(232, 216, 196);
   --color-white: rgb(255, 255, 255);
-  --color-gray: rgb(204, 204, 204, .5);
+  --color-gray: rgb(53, 45, 45, .5);
 
   --fz-base: 1.6rem;
   --fz-heading: 3.2rem;
@@ -45,8 +45,7 @@ body {
   grid-template-rows: auto;
   min-height: 100vh;
 
-  background-color: var(--color-dark);
-  color: var(--color-light);
+  color: var(--color-dark);
   font-family: sans-serif;
   line-height: 1.6;
   font-size: var(--fz-base);
@@ -58,34 +57,27 @@ body {
   grid-column: 1 / -1;
 }
 
-/* Headings, paragraphs, lists, etc. */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: var(--spacing-s);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-light);
-}
-
-p {
-  margin-bottom: var(--spacing-s);
-}
-
 a {
   color: var(--color-orange);
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 ul {
   list-style: none;
+}
+
+/* Headings */
+
+.heading {
+  color: var(--color-orange);
+}
+
+.subheading {
+  color: inherit;
+}
+
+.p {
+  color: inherit;
 }
 
 /* Buttons */
@@ -102,11 +94,11 @@ ul {
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Utilities */
 .btn:hover {
-  background-color: #e65e00;
+  background-color: var(--color-white);
 }
 
+/* Utilities */
 .underline {
   position: relative;
 }
@@ -161,6 +153,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-color: var(--color-gray);
 }
 
 .video-description {
@@ -191,6 +184,8 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 .about-section .content-container {
@@ -213,6 +208,7 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-light);
 }
 
 .why-choose-us-section .image-container {
@@ -237,6 +233,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--color-dark);
 }
 
 .services-section .carousel-content {
@@ -330,6 +327,7 @@ ul {
 .cta-section {
   text-align: center;
   background: url('./assets/digital-voice.jpg');
+  color: var(--color-light);
 }
 
 .cta-container {
@@ -350,6 +348,7 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-light);
 }
 
 .impact-section .content-container {
@@ -373,6 +372,8 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 .digital-presence-section .image-container {
@@ -403,6 +404,7 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-light);
 }
 
 .next-level-section .content-container {
@@ -425,6 +427,8 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 .contact-section .content-container {
@@ -433,6 +437,11 @@ ul {
 
 .contact-heading {
   text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.contact-heading .highlight {
+  color: var(--color-white);
 }
 
 .contact-form {
@@ -442,6 +451,12 @@ ul {
 
 .contact-label {
   text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.contact-section .btn {
+  background-color: var(--color-dark);
+  color: inherit;
 }
 
 .contact-input,
@@ -450,6 +465,15 @@ ul {
   padding: 1rem;
   background-color: var(--color-white);
   color: var(--color-dark);
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: var(--color-gray);
   font-size: inherit;
   font-family: inherit;
 }
@@ -466,6 +490,8 @@ ul {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 .footer-container {
