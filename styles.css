@@ -28,7 +28,7 @@
   --color-gray: rgb(53, 45, 45, 0.5);
 
   --fz-tiny: 1.28rem;
-  --fz-smalL: 1.6rem;
+  --fz-small: 1.6rem;
   --fz-base: 2rem;
   --fz-heading-xs: 2.5rem;
   --fz-heading-s: 3.125rem;
@@ -214,8 +214,8 @@ ul {
 --------------------------------------------------- */
 .sticky-nav {
   position: fixed;
-  top: 12rem;
-  right: 6rem;
+  top: var(--spacing-96);
+  right: var(--spacing-64);
   z-index: 1000;
 }
 
@@ -223,13 +223,24 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: right;
+  gap: var(--spacing-8);
+}
+
+.nav-item {
+  display: flex;
+  justify-content: end;
 }
 
 .nav-link {
+  display: inline-block;
   text-transform: uppercase;
-  font-weight: 300;
+  font-optical-sizing: auto;
   color: var(--color-light);
-  position: relative;
+  font-size: var(--fz-small);
+  font-family: var(--ff-mulish);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.5px;
+  font-weight: 200;
 }
 
 .nav-link.active {
