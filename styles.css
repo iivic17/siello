@@ -1,6 +1,16 @@
 /* ------------------------------------------------
    GLOBAL RESET & ROOT VARIABLES
 --------------------------------------------------- */
+
+@font-face {
+  font-family: 'Cy Grotesk Grand Dark';
+  src: url('./assets/fonts/CyGrotesk-GrandDark.woff2') format('woff2'),
+       url('./assets/CyGrotesk-GrandDark.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -15,11 +25,25 @@
   --color-orange: rgb(249, 125, 3);
   --color-light: rgb(232, 216, 196);
   --color-white: rgb(255, 255, 255);
-  --color-gray: rgb(53, 45, 45, .5);
+  --color-gray: rgb(53, 45, 45, 0.5);
 
-  --fz-base: 1.6rem;
-  --fz-heading: 3.2rem;
-  --fz-subheading: 2.4rem;
+  --fz-tiny: 1.28rem;
+  --fz-smalL: 1.6rem;
+  --fz-base: 2rem;
+  --fz-heading-xs: 2.5rem;
+  --fz-heading-s: 3.125rem;
+  --fz-heading-m: 3.906rem;
+  --fz-heading-l: 4.883rem;
+  --fz-heading-xl: 6.104rem;
+
+  --ff-mulish: "Mulish", serif;
+  --ff-arimo: "Arimo", serif;
+  --ff-grotesk: 'Cy Grotesk Grand Dark', sans-serif;
+
+  --lh-base: 1.8;
+  --lh-heading: 1.2;
+  --lh-subheading: 1;
+
 
   --spacing-section: 4rem;
   --spacing-element: 2rem;
@@ -40,15 +64,18 @@ body {
 
 body {
   display: grid;
+
   /* 1 column on each side (1fr) + 8 columns in the middle */
   grid-template-columns: 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
   grid-template-rows: auto;
   min-height: 100vh;
 
   color: var(--color-dark);
-  font-family: sans-serif;
-  line-height: 1.6;
   font-size: var(--fz-base);
+  font-family: var(--ff-mulish);
+  line-height: var(--lh-base);
+  font-weight: 300;
+  font-optical-sizing: auto;
 
   position: relative;
 }
@@ -67,13 +94,26 @@ ul {
 }
 
 /* Headings */
-
 .heading {
   color: var(--color-orange);
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-size: var(--fz-heading-m);
+  font-family: var(--ff-grotesk);
+  line-height: var(--lh-heading);
+  letter-spacing: -2px;
+  font-weight: 800;
 }
 
 .subheading {
   color: inherit;
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-size: var(--fz-heading-xs);
+  font-family: var(--ff-mulish);
+  line-height: var(--lh-subheading);
+  letter-spacing: 0.5px;
+  font-weight: 200;
 }
 
 .p {
@@ -174,7 +214,13 @@ ul {
 }
 
 .hero-title {
-  font-size: 4rem;
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-size: var(--fz-heading-xl);
+  font-family: var(--ff-grotesk);
+  line-height: var(--lh-heading);
+  letter-spacing: -2px;
+  font-weight: 800;
 }
 
 /* ------------------------------------------------
@@ -195,7 +241,7 @@ ul {
 .about-section .image-container {
   width: 100%;
   grid-column: 7 / -1;
-  background: url('./assets/about.jpg');
+  background: url("./assets/about.jpg");
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -214,7 +260,7 @@ ul {
 .why-choose-us-section .image-container {
   width: 100%;
   grid-column: 1 / 5;
-  background: url('./assets/why-choose-us.jpg');
+  background: url("./assets/why-choose-us.jpg");
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -326,7 +372,7 @@ ul {
 --------------------------------------------------- */
 .cta-section {
   text-align: center;
-  background: url('./assets/digital-voice.jpg');
+  background: url("./assets/digital-voice.jpg");
   color: var(--color-light);
 }
 
@@ -339,7 +385,7 @@ ul {
 
 .cta-title {
   font-size: 3.6rem;
-  }
+}
 
 /* ------------------------------------------------
    IMPACT SECTION
@@ -358,7 +404,7 @@ ul {
 .impact-section .image-container {
   width: 100%;
   grid-column: 7 / -1;
-  background: url('./assets/impact.jpg');
+  background: url("./assets/impact.jpg");
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -396,7 +442,6 @@ ul {
   position: absolute;
 }
 
-
 /* ------------------------------------------------
    NEXT LEVEL SECTION
 --------------------------------------------------- */
@@ -414,7 +459,7 @@ ul {
 .next-level-section .image-container {
   width: 100%;
   grid-column: 7 / -1;
-  background: url('./assets/next-level.jpg');
+  background: url("./assets/next-level.jpg");
   height: 100%;
   background-size: cover;
   background-position: center;
