@@ -9,21 +9,18 @@
   box-sizing: border-box;
 }
 
-/* 1rem = 10px */
 :root {
   font-size: 62.5%; /* => 1rem = 10px */
-  --color-dark: #1d1d1d;
-  --color-orange: #ff6a00;
-  --color-light: #f5efe7;
-  --color-white: #ffffff;
-  --color-gray: #ccc;
+  --color-dark: rgb(53, 45, 45);
+  --color-orange: rgb(249, 125, 3);
+  --color-light: rgb(232, 216, 196);
+  --color-white: rgb(255, 255, 255);
+  --color-gray: rgb(204, 204, 204, .5);
 
-  /* Example font sizes (adjust as desired) */
-  --fz-base: 1.6rem; /* 16px */
-  --fz-heading: 3.2rem; /* 32px */
-  --fz-subheading: 2.4rem; /* 24px */
+  --fz-base: 1.6rem;
+  --fz-heading: 3.2rem;
+  --fz-subheading: 2.4rem;
 
-  /* Example spacing scale */
   --spacing-section: 4rem;
   --spacing-element: 2rem;
   --spacing-s: 1rem;
@@ -57,15 +54,8 @@ body {
   position: relative;
 }
 
-/*
-  By default, direct children of body (header, main, footer)
-  will NOT automatically occupy the middle 8 columns.
-  We must specify grid-column for them.
-*/
-header,
-.section,
-footer {
-  grid-column: 2 / 10; /* middle 8 columns */
+.section {
+  grid-column: 1 / -1;
 }
 
 /* Headings, paragraphs, lists, etc. */
@@ -102,7 +92,7 @@ ul {
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-light);
   color: var(--color-dark);
   font-weight: 600;
   text-align: center;
@@ -112,11 +102,11 @@ ul {
   transition: background-color 0.3s ease-in-out;
 }
 
+/* Utilities */
 .btn:hover {
-  background-color: #e65e00; /* Darker orange on hover */
+  background-color: #e65e00;
 }
 
-/* Underline or highlight classes (for text embellishment) */
 .underline {
   position: relative;
 }
@@ -133,9 +123,7 @@ ul {
 /* ------------------------------------------------
    HEADER & HERO
 --------------------------------------------------- */
-/* Let the hero section span the entire width if desired */
 .header-section {
-  grid-column: 1 / -1; /* Overwrite the default, so hero is full width */
   position: relative;
 }
 
@@ -148,20 +136,17 @@ ul {
 
 .nav-list {
   display: flex;
-  gap: var(--spacing-s);
   flex-direction: column;
   text-align: right;
 }
 
 .nav-link {
-  font-size: var(--fz-base);
   text-transform: uppercase;
   font-weight: 300;
   color: var(--color-light);
   position: relative;
 }
 
-/* Example "active" highlight for nav link */
 .nav-link.active {
   color: var(--color-orange);
 }
@@ -169,18 +154,19 @@ ul {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* or enough to fill the viewport */
-  overflow: hidden;
+  height: 80vh;
 }
 
-/* The hero video */
 .hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* The hero content overlay */
+.video-description {
+  position: absolute;
+}
+
 .hero-content {
   position: absolute;
   top: 50%;
@@ -188,76 +174,66 @@ ul {
   transform: translate(-50%, -50%);
   text-align: center;
   color: var(--color-light);
-  max-width: 60rem;
-  padding: var(--spacing-s);
 }
 
 .hero-logo {
   max-width: 10rem;
-  margin-bottom: var(--spacing-s);
 }
 
 .hero-title {
   font-size: 4rem;
-  margin-bottom: var(--spacing-m);
-  line-height: 1.2;
 }
 
 /* ------------------------------------------------
    ABOUT SECTION
 --------------------------------------------------- */
 .about-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   align-items: center;
-  gap: var(--spacing-m);
+  grid-template-columns: subgrid;
 }
 
 .about-section .content-container {
-  flex: 1 1 40rem;
+  grid-column: 2 / 7;
 }
 
 .about-section .image-container {
-  flex: 1 1 40rem;
-}
-
-.about-image {
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  grid-column: 7 / -1;
+  background: url('./assets/about.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ------------------------------------------------
    WHY CHOOSE US SECTION
 --------------------------------------------------- */
 .why-choose-us-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   align-items: center;
-  gap: var(--spacing-m);
+  grid-template-columns: subgrid;
 }
 
 .why-choose-us-section .image-container {
-  flex: 1 1 40rem;
+  width: 100%;
+  grid-column: 1 / 5;
+  background: url('./assets/why-choose-us.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 .why-choose-us-section .content-container {
-  flex: 1 1 40rem;
-}
-
-.why-choose-us-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  grid-column: 5 / 10;
 }
 
 /* ------------------------------------------------
    SERVICES / CAROUSEL SECTION
 --------------------------------------------------- */
 .services-section {
-  /* This one can be normal flow unless you want side-by-side
-     Because you have a heading + carousel list. */
+  /* This one can be normal flow unless its side-by-side
+     a heading + carousel list */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -318,7 +294,7 @@ ul {
   color: var(--color-orange);
 }
 
-/* Horizontal fade on carousel edges (optional) */
+/* Horizontal fade on carousel edges  */
 .carousel-container::before,
 .carousel-container::after {
   content: "";
@@ -351,122 +327,131 @@ ul {
 /* ------------------------------------------------
    CTA SECTION
 --------------------------------------------------- */
-#cta {
+.cta-section {
   text-align: center;
+  background: url('./assets/digital-voice.jpg');
 }
 
 .cta-container {
-  max-width: 60rem;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-title {
   font-size: 3.6rem;
-  margin-bottom: var(--spacing-m);
-}
+  }
 
 /* ------------------------------------------------
    IMPACT SECTION
 --------------------------------------------------- */
 .impact-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-m);
+  display: grid;
   align-items: center;
+  grid-template-columns: subgrid;
 }
 
-.impact-content-container,
+.impact-section .content-container {
+  grid-column: 2 / 7;
+}
+
 .impact-section .image-container {
-  flex: 1 1 40rem;
-}
-
-.impact-image {
   width: 100%;
-  display: block;
-  object-fit: cover;
+  grid-column: 7 / -1;
+  background: url('./assets/impact.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ------------------------------------------------
    DIGITAL PRESENCE SECTION
 --------------------------------------------------- */
+
 .digital-presence-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-m);
+  display: grid;
   align-items: center;
+  grid-template-columns: subgrid;
 }
 
-.digital-presence-image {
+.digital-presence-section .image-container {
   width: 100%;
-  object-fit: cover;
-  flex: 1 1 40rem;
+  grid-column: 1 / 5;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: end;
+  position: relative;
 }
+
+.digital-presence-section .content-container {
+  grid-column: 5 / 10;
+}
+
+.digital-presence-section .image-container img {
+  height: 100%;
+  position: absolute;
+}
+
 
 /* ------------------------------------------------
    NEXT LEVEL SECTION
 --------------------------------------------------- */
 .next-level-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-m);
+  display: grid;
   align-items: center;
+  grid-template-columns: subgrid;
 }
 
-.next-level-section .content-container,
+.next-level-section .content-container {
+  grid-column: 2 / 7;
+}
+
 .next-level-section .image-container {
-  flex: 1 1 40rem;
-}
-
-.next-level-image {
   width: 100%;
-  display: block;
-  object-fit: cover;
+  grid-column: 7 / -1;
+  background: url('./assets/next-level.jpg');
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ------------------------------------------------
    CONTACT SECTION
 --------------------------------------------------- */
 .contact-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-m);
+  display: grid;
   align-items: center;
+  grid-template-columns: subgrid;
 }
 
 .contact-section .content-container {
-  flex: 1 1 40rem;
+  grid-column: 4 / 8;
 }
 
 .contact-heading {
-  margin-bottom: var(--spacing-m);
   text-transform: uppercase;
-}
-
-.contact-intro {
-  margin-bottom: var(--spacing-m);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
-  max-width: 40rem;
 }
 
 .contact-label {
   text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 .contact-input,
 .contact-textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #333;
-  background-color: #2a2a2a;
-  color: var(--color-light);
-  font-size: var(--fz-base);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .contact-input:focus,
@@ -478,21 +463,18 @@ ul {
    FOOTER SECTION
 --------------------------------------------------- */
 .footer-section {
-  grid-column: 1 / -1; /* Overwrites the default so it spans full width */
-  background-color: #2a2a2a;
-  padding: var(--spacing-m) 0;
+  display: grid;
+  align-items: center;
+  grid-template-columns: subgrid;
 }
 
 .footer-container {
-  /* We still want the actual footer content in the middle. */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-m);
-
-  /* Center inside the 8 columns for the main content area */
   grid-column: 2 / 10;
-  width: 100%;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
 .footer-left,
@@ -500,17 +482,20 @@ ul {
 .footer-right {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
 }
 
-/* Social icons row */
-.footer-social p {
-  margin-bottom: var(--spacing-s);
+.footer-left {
+  justify-self: start;
+  align-self: self-start;
+}
+
+.footer-right {
+  justify-self: end;
+  align-self: self-start;
 }
 
 .social-icons {
   display: flex;
-  gap: var(--spacing-s);
 }
 
 .social-link {
@@ -519,13 +504,11 @@ ul {
 
 .footer-logo {
   max-width: 12rem;
-  margin: 0 auto;
 }
 
 .footer-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .footer-nav-link {
@@ -534,26 +517,12 @@ ul {
   font-weight: 600;
 }
 
-/* Footer bottom line */
 .footer-bottom {
   grid-column: 1 / -1;
-  text-align: center;
-  margin-top: var(--spacing-m);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-m);
-}
-
-.footer-separator {
-  flex: 1;
-  border: 0;
-  height: 1px;
-  background-color: #444;
+  justify-items: center;
 }
 
 .footer-copyright {
-  flex-shrink: 0;
-  font-size: 1.2rem;
   color: var(--color-gray);
 }
