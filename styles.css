@@ -496,12 +496,13 @@ p:not(:first-of-type) {
 .digital-presence-section .image-container img {
   height: 100%;
   position: absolute;
+  right: var(--spacing-64);
 }
 
 .digital-presence-section .content-container {
   grid-column: 5 / 10;
   padding: var(--spacing-128) 0;
-  padding-left: var(--spacing-128);
+  padding-left: var(--spacing-64);
   height: 50rem;
   display: flex;
   flex-direction: column;
