@@ -517,6 +517,7 @@ p:not(:first-of-type) {
 .digital-presence-subheading {
   font-weight: 1000;
   font-size: var(--fz-heading-s);
+  letter-spacing: -2px;
 }
 
 /* ------------------------------------------------
@@ -555,7 +556,9 @@ p:not(:first-of-type) {
   display: grid;
   align-items: center;
   grid-template-columns: subgrid;
-  background-color: var(--color-orange);
+  background: url('./assets/form-background.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--color-white);
 }
 
