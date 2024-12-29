@@ -361,18 +361,12 @@ p:not(:first-of-type) {
   gap: var(--spacing-16);
 }
 
-.carousel::before,
-.carousel::after {
-  content: "";
-  display: block;
-  min-width: calc((100vw - (16rem * 8)) / 2 - var(--spacing-16));
-}
-
 .carousel::-webkit-scrollbar {
   height: 0;
 }
 
 .card {
+  scroll-snap-align: var(--align);
   max-width: 38rem;
   background-color: var(--color-dark);
   flex-shrink: 0;
