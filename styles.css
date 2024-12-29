@@ -403,12 +403,12 @@ p:not(:first-of-type) {
   align-items: start;
   justify-content: start;
   padding: var(--spacing-32) var(--spacing-48);
+  text-align: left;
 }
 
 .card-icon {
   height: 5rem;
-  width: 5rem;
-  background-color: var(--color-light);
+  fill: var(--color-light);
 }
 
 .card-heading {

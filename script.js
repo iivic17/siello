@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Observe each section
   sections.forEach((section) => highlightObserver.observe(section));
 
-  // ---------------------------------------
-  // 3) ADD EXTRA LEFT/RIGHT MARGINS TO
-  //    FIRST/LAST CAROUSEL ITEMS
-  //    + Update on Resize
-  // ---------------------------------------
+/* ---------------------------------------
+ * 3. ADD EXTRA LEFT/RIGHT MARGINS TO
+ *    FIRST/LAST CAROUSEL ITEMS
+ *    + UPDATE ON RESIZE
+ * --------------------------------------- */
   const servicesSection = document.querySelector(
     ".services-section"
   );
@@ -96,4 +96,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Listen for window resize
   window.addEventListener("resize", updateCarouselMargins);
+
+  /* ---------------------------------------
+   * 4. SET ASPECT RATIO FOR SVG ICONS
+   * --------------------------------------- */
+  document.querySelectorAll("svg.card-icon").forEach((svg) => {
+    const vb = svg.getAttribute("viewBox");
+    
+    if (vb) {
+      const [, , wStr, hStr] = vb.split(" ");
+      const w = parseFloat(wStr);
+      const h = parseFloat(hStr);
+      if (w > 0 && h > 0) {
+        svg.style.aspectRatio = `${w} / ${h}`;
+      }
+    }
+  });
 });
