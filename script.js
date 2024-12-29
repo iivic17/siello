@@ -61,14 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Observe each section
   sections.forEach((section) => highlightObserver.observe(section));
 
-/* ---------------------------------------
- * 3. ADD EXTRA LEFT/RIGHT MARGINS TO
- *    FIRST/LAST CAROUSEL ITEMS
- *    + UPDATE ON RESIZE
- * --------------------------------------- */
-  const servicesSection = document.querySelector(
-    ".services-section"
-  );
+  /* ---------------------------------------
+   * 3. ADD EXTRA LEFT/RIGHT MARGINS TO
+   *    FIRST/LAST CAROUSEL ITEMS
+   *    + UPDATE ON RESIZE
+   * --------------------------------------- */
+  const servicesSection = document.querySelector(".services-section");
   const headingContainer = document.querySelector(
     ".services-section .heading-container"
   );
@@ -102,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * --------------------------------------- */
   document.querySelectorAll("svg.card-icon").forEach((svg) => {
     const vb = svg.getAttribute("viewBox");
-    
+
     if (vb) {
       const [, , wStr, hStr] = vb.split(" ");
       const w = parseFloat(wStr);
@@ -111,5 +109,79 @@ document.addEventListener("DOMContentLoaded", () => {
         svg.style.aspectRatio = `${w} / ${h}`;
       }
     }
+  });
+
+  /* ---------------------------------------
+   * 5. CAROUSEL CONTROLS LOGIC
+   * --------------------------------------- */
+  const carousel = document.querySelector(".carousel");
+  const leftControl = document.querySelector(
+    ".controls-container .controls:first-child"
+  );
+  const rightControl = document.querySelector(
+    ".controls-container .controls:last-child"
+  );
+
+  function updateControls() {
+    // Calculate maximum scroll left value
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+    // Current scroll position
+    const currentScrollLeft = carousel.scrollLeft;
+
+    // Update left control
+    if (currentScrollLeft <= 0) {
+      leftControl.classList.add("controls-end");
+    } else {
+      leftControl.classList.remove("controls-end");
+    }
+
+    // Update right control
+    if (currentScrollLeft >= maxScrollLeft - 1) {
+      // -1 to account for minor differences
+      rightControl.classList.add("controls-end");
+    } else {
+      rightControl.classList.remove("controls-end");
+    }
+  }
+
+  if (firstCard) {
+    // Get the computed styles of the first card
+    const cardStyles = window.getComputedStyle(firstCard);
+
+    // Calculate the width including margin-right
+    const cardWidth =
+      firstCard.offsetWidth + parseFloat(cardStyles.marginRight);
+
+    // Define the scroll amount as the width of one card
+    const scrollAmount = cardWidth;
+
+    // Use scrollAmount for scrolling logic
+    leftControl.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    rightControl.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // Initial update of controls
+  updateControls();
+
+  // Update controls when the carousel is scrolled manually
+  carousel.addEventListener("scroll", () => {
+    updateControls();
+  });
+
+  // Update controls on window resize (to handle changes in carousel width)
+  window.addEventListener("resize", () => {
+    updateControls();
   });
 });
