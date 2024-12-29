@@ -108,6 +108,8 @@ ul {
   line-height: var(--lh-heading);
   letter-spacing: -1.5px;
   font-weight: 800;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .subheading {
@@ -119,6 +121,8 @@ ul {
   line-height: var(--lh-subheading);
   letter-spacing: 0.5px;
   font-weight: 200;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 p {
@@ -320,49 +324,61 @@ p:not(:first-of-type) {
    SERVICES / CAROUSEL SECTION
 --------------------------------------------------- */
 .services-section {
-  /* This one can be normal flow unless its side-by-side
-     a heading + carousel list */
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
+  grid-template-columns: subgrid;
   background: url('./assets/carousel-background.png');
   background-size: cover;
   background-position: center;
+  color: var(--color-light);
+  padding: var(--spacing-128) 0;
 }
 
-.services-section .carousel-content {
-  text-align: center;
-  margin-bottom: var(--spacing-l);
-  max-width: 70rem;
+.services-section .text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  grid-column: 2 / 10;
+}
+
+.services-section p {
+  margin-top: 0;
+  max-width: 40%;
 }
 
 .carousel-container {
+  margin-top: var(--spacing-48);
   position: relative;
   width: 100%;
-  overflow: hidden; /* so the fade-out effect can appear */
+  overflow: hidden;
+  grid-column: 2 / -1;
 }
 
 .carousel {
   display: flex;
-  gap: var(--spacing-m);
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
-  padding: var(--spacing-s) 0;
+  gap: 2rem;
+
+  scrollbar-gutter: auto;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 0;
 }
 
 .card {
-  min-width: 28rem; /* So we see them as “cards” horizontally */
-  background-color: #2a2a2a;
-  border-radius: 0.5rem;
-  padding: var(--spacing-m);
+  max-width: 28rem;
+  background-color: salmon;
   flex-shrink: 0;
 }
 
+/* MOCK ICON */
 .card-icon {
   height: 3rem;
   width: 3rem;
   margin-bottom: var(--spacing-s);
-  background-color: var(--color-orange);
+  background-color: var(--color-white);
   border-radius: 0.3rem;
 }
 
@@ -371,48 +387,17 @@ p:not(:first-of-type) {
   margin-bottom: var(--spacing-s);
 }
 
-.card-bullet-list li {
+.card-list li {
   margin-left: 1.5rem;
   position: relative;
   padding-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.card-bullet-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--color-orange);
-}
-
-/* Horizontal fade on carousel edges  */
-.carousel-container::before,
-.carousel-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 5rem; /* adjust as needed */
-  z-index: 1;
-  pointer-events: none;
-}
-
-.carousel-container::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    var(--color-dark) 0%,
-    rgba(29, 29, 29, 0) 100%
-  );
-}
-
-.carousel-container::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    var(--color-dark) 0%,
-    rgba(29, 29, 29, 0) 100%
-  );
+.card-list li::before {
+  content: "✔";
+  display: inline-block;
+  color: var(--color-white);
 }
 
 /* ------------------------------------------------
