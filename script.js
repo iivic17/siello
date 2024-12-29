@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // SELECTORS
-  // 1) All links that point to an ID (including CTA, logo, nav links, etc.)
   const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
-  // 2) Only nav links (for the "active" highlight)
   const navLinks = document.querySelectorAll("a.nav-link");
-  // 3) All sections that have an id, for Intersection Observer
   const sections = document.querySelectorAll("section[id]");
 
   /* ---------------------------------------

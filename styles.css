@@ -31,6 +31,7 @@
 
   --fz-tiny: 1.4rem;
   --fz-small: 1.6rem;
+  --fz-sub: 1.8rem;
   --fz-base: 2rem;
   --fz-heading-xs: 2.5rem;
   --fz-heading-s: 3.1rem;
@@ -368,7 +369,8 @@ p:not(:first-of-type) {
 
 .text-container p {
   margin-top: 0;
-  max-width: 40%;
+  max-width: 35%;
+  font-size: var(--fz-sub);
 }
 
 .carousel-container {
