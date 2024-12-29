@@ -22,6 +22,7 @@
 :root {
   font-size: 62.5%; /* => 1rem = 10px */
   --color-dark: rgb(53, 45, 45);
+  --color-dark-opaque: rgb(53, 45, 45, 0.7);
   --color-orange: rgb(249, 125, 3);
   --color-light: rgb(232, 216, 196);
   --color-light-opaque: rgb(232, 216, 196, 0.7);
@@ -45,6 +46,7 @@
   --lh-hero-heading: 1;
   --lh-heading: 1.2;
   --lh-subheading: 1;
+  --lh-card-heading: 1;
 
   --spacing-4: 0.4rem;
   --spacing-8: 0.8rem;
@@ -332,6 +334,29 @@ p:not(:first-of-type) {
   background-position: center;
   color: var(--color-light);
   padding: var(--spacing-128) 0;
+  position: relative;
+  z-index: 0;
+}
+
+.services-section::before,
+.services-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--section-gradient-size, 0px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.services-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-dark-opaque), transparent);
+}
+
+.services-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-dark-opaque), transparent);
 }
 
 .services-section .text-container {
@@ -367,7 +392,7 @@ p:not(:first-of-type) {
 
 .card {
   scroll-snap-align: var(--align);
-  max-width: 38rem;
+  max-width: fit-content;
   background-color: var(--color-dark);
   flex-shrink: 0;
   display: flex;
@@ -377,29 +402,31 @@ p:not(:first-of-type) {
   padding: var(--spacing-32) var(--spacing-48);
 }
 
-.card-list {
-  margin-top: var(--spacing-24);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-16);
-}
-
 .card-icon {
   height: 5rem;
   width: 5rem;
   background-color: var(--color-light);
 }
 
-.carousel-heading {
+.card-heading {
   margin-top: var(--spacing-48);
   font-size: var(--fz-base);
   letter-spacing: 0;
+  line-height: var(--lh-card-heading);
 }
 
 .card-text {
   margin-top: var(--spacing-16);
   font-size: var(--fz-tiny);
   color: var(--color-light-opaque);
+  max-width: 28rem;
+}
+
+.card-list {
+  margin-top: var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
 }
 
 .card li {

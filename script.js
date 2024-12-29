@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   allAnchorLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
-      // If just "#", likely a placeholder—abort.
+      // If just "#", likely a placeholder—abort
       if (href === "#") {
         event.preventDefault();
         return;
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
    * 2. HIGHLIGHT ACTIVE NAV LINK
    *    (Intersection Observer)
    * --------------------------------------- */
-  // We only highlight links in the nav, so we look for nav-links
   const highlightOptions = {
     root: null,
     // rootMargin so highlight triggers around ~center of viewport
@@ -71,17 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
   //    FIRST/LAST CAROUSEL ITEMS
   //    + Update on Resize
   // ---------------------------------------
-  const headingContainer = document.querySelector(".services-section .heading-container");
+  const servicesSection = document.querySelector(
+    ".services-section"
+  );
+  const headingContainer = document.querySelector(
+    ".services-section .heading-container"
+  );
   const firstCard = document.querySelector(".carousel li.card:first-child");
   const lastCard = document.querySelector(".carousel li.card:last-child");
 
   function updateCarouselMargins() {
-    if (headingContainer && firstCard && lastCard) {
+    if (headingContainer && firstCard && lastCard && servicesSection) {
       const headingRect = headingContainer.getBoundingClientRect();
       const distance = headingRect.left;
 
       firstCard.style.marginLeft = `${distance}px`;
       lastCard.style.marginRight = `${distance}px`;
+
+      // Sets custom CSS variable used by ::before and ::after linear-gradient
+      servicesSection.style.setProperty(
+        "--section-gradient-size",
+        `${distance}px`
+      );
     }
   }
 
