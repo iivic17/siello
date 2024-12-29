@@ -335,6 +335,7 @@ p:not(:first-of-type) {
   background-position: center;
   color: var(--color-light);
   padding: var(--spacing-128) 0;
+  padding-bottom: var(--spacing-96);
   position: relative;
   z-index: 0;
 }
@@ -442,6 +443,7 @@ p:not(:first-of-type) {
   line-height: 1;
   width: auto;
   display: block;
+  color: var(--color-orange);
 }
 
 .card .list-text {
@@ -449,6 +451,34 @@ p:not(:first-of-type) {
   font-size: var(--fz-small);
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2 / 10;
+  gap: var(--spacing-16);
+  margin-top: var(--spacing-32);
+}
+
+.controls {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.controls:hover {
+  background-color: var(--color-dark-opaque);
+}
+
+.controls-end {
+  background-color: var(--color-dark-opaque);
+  pointer-events: none;
 }
 
 /* ------------------------------------------------
