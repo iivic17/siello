@@ -24,6 +24,7 @@
   --color-dark: rgb(53, 45, 45);
   --color-dark-opaque: rgb(53, 45, 45, 0.7);
   --color-orange: rgb(249, 125, 3);
+  --color-orange-light: rgba(249, 126, 3, 0.7);
   --color-light: rgb(232, 216, 196);
   --color-light-opaque: rgb(232, 216, 196, 0.7);
   --color-white: rgb(255, 255, 255);
@@ -738,6 +739,7 @@ p:not(:first-of-type) {
   grid-template-columns: subgrid;
   background-color: var(--color-dark);
   color: var(--color-light);
+  padding: var(--spacing-80) 0 var(--spacing-64);
 }
 
 .footer-container {
@@ -767,14 +769,16 @@ p:not(:first-of-type) {
 .footer-right {
   justify-self: end;
   align-self: self-start;
+  gap: var(--spacing-16);
 }
 
 .footer-heading {
   font-weight: 400;
-  font-size: var(--fz-small);
+  font-size: var(--fz-sub);
 }
 
 .footer-link {
+  color: var(--color-orange-light);
 }
 
 .footer-logo {
@@ -793,6 +797,10 @@ p:not(:first-of-type) {
   align-items: center;
   gap: var(--spacing-8);
   line-height: var(--lh-link);
+}
+
+.contact-item span {
+  color: var(--color-light-opaque);
 }
 
 .contact-icon {
@@ -819,20 +827,29 @@ p:not(:first-of-type) {
 .footer-nav-list {
   display: flex;
   flex-direction: column;
-  list-style-type: disc;
+  gap: var(--spacing-8);
+}
+
+.footer-nav-list li {
+  line-height: var(--lh-link);
 }
 
 .footer-nav-link {
   display: inline-block;
+  color: var(--color-light-opaque);
   font-optical-sizing: auto;
-  color: var(--color-light);
-  font-size: var(--fz-small);
-  line-height: var(--lh-subheading);
+  font-size: var(--fz-tiny);
   letter-spacing: 0.5px;
   font-weight: 200;
+  transition: all 0.3s;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-light);
 }
 
 .footer-bottom {
+  margin-top: var(--spacing-48);
   grid-column: 2 / 10;
   align-items: center;
   display: grid;
@@ -845,11 +862,11 @@ p:not(:first-of-type) {
   content: "";
   height: 1px;
   width: 100%;
-  background-color: var(--color-light);
+  background-color: var(--color-light-opaque);
 }
 
 .footer-copyright {
-  color: var(--color-light);
+  color: var(--color-light-opaque);
   font-size: var(--fz-tiny);
   text-transform: uppercase;
   font-weight: 100;
