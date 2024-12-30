@@ -746,6 +746,8 @@ p:not(:first-of-type) {
   justify-content: center;
   align-items: center;
   justify-items: center;
+  text-transform: uppercase;
+  font-size: 1.6rem;
 }
 
 .footer-left,
@@ -763,6 +765,14 @@ p:not(:first-of-type) {
 .footer-right {
   justify-self: end;
   align-self: self-start;
+}
+
+.footer-contact-item {
+  font-weight: 400;
+}
+
+.footer-social p {
+  font-weight: 400;
 }
 
 .social-icons {
@@ -786,12 +796,15 @@ p:not(:first-of-type) {
 .footer-nav-list {
   display: flex;
   flex-direction: column;
+  list-style-type: disc;
+}
+
+.footer-nav-title {
+  font-weight: 500;
 }
 
 .footer-nav-link {
   color: var(--color-light);
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
 .footer-bottom {
