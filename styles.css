@@ -833,15 +833,24 @@ p:not(:first-of-type) {
 }
 
 .footer-bottom {
-  grid-column: 1 / -1;
+  grid-column: 2 / 10;
   align-items: center;
-  justify-items: center;
+  display: grid;
+  column-gap: var(--spacing-16);
+  grid-template-columns: 1fr max-content 1fr;
+}
+
+.footer-bottom::after,
+.footer-bottom::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light);
 }
 
 .footer-copyright {
   color: var(--color-light);
   font-size: var(--fz-tiny);
-  line-height: 5rem;
   text-transform: uppercase;
   font-weight: 100;
 }
