@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles.css" />
 
     <script src="script.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver" defer></script>
   </head>
 
   <body>
@@ -106,6 +107,9 @@
           </a>
         </div>
       </div>
+
+      <!-- Sentinel for IntersectionObserver -->
+      <div class="nav-sentinel"></div>
     </header>
 
     <!-- ABOUT SECTION -->

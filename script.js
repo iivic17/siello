@@ -191,4 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     updateControls();
   });
+
+  /* ---------------------------------------
+   * 6. STICKY NAV POSITION ON SCROLL
+   * --------------------------------------- */
+  const nav = document.querySelector(".sticky-nav");
+  const sentinel = document.querySelector(".nav-sentinel");
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          nav.classList.add("fixed");
+        } else {
+          nav.classList.remove("fixed");
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+  
+  navObserver.observe(sentinel);
 });
