@@ -49,10 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
           `a.nav-link[href="#${sectionId}"]`
         );
         if (navLink) {
-          // Remove 'active' from all nav links
-          navLinks.forEach((link) => link.classList.remove("active"));
-          // Set 'active' on the link that matches the current section
-          navLink.classList.add("active");
+          // Remove 'active' from all nav items
+          navLinks.forEach((link) => link.closest('li').classList.remove("active"));
+          // Set 'active' on the items that matches the current section
+          const navItem = navLink.closest('li');
+          navItem.classList.add("active");
         }
       }
     });
