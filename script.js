@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------------------------
    * 4. SET ASPECT RATIO FOR SVG ICONS
    * --------------------------------------- */
-  document.querySelectorAll("svg.card-icon").forEach((svg) => {
+  document.querySelectorAll("svg.icon").forEach((svg) => {
     const vb = svg.getAttribute("viewBox");
 
     if (vb) {

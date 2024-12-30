@@ -183,7 +183,7 @@
         <ul class="carousel" aria-label="Service Cards">
           <!-- Card 1 -->
           <li class="card card-content-creation">
-            <svg class="card-icon" viewBox="0 0 32 32">
+            <svg class="icon card-icon" viewBox="0 0 32 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-edit"></use>
             </svg>
             <h4 class="heading card-heading">Content<br />Creation</h4>
@@ -218,7 +218,7 @@
 
           <!-- Card 2 -->
           <li class="card card-digital-campaigns">
-            <svg class="card-icon" viewBox="0 0 42 32">
+            <svg class="icon card-icon" viewBox="0 0 42 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-target"></use>
             </svg>
             <h4 class="heading card-heading">Digital<br />Campaigns</h4>
@@ -253,7 +253,7 @@
 
           <!-- Card 3 -->
           <li class="card card-brand-identity">
-            <svg class="card-icon" viewBox="0 0 35 32">
+            <svg class="icon card-icon" viewBox="0 0 35 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-puzzle"></use>
             </svg>
             <h4 class="heading card-heading">Brand<br />Identity</h4>
@@ -286,7 +286,7 @@
 
           <!-- Card 4 -->
           <li class="card card-social-strategy">
-            <svg class="card-icon" viewBox="0 0 31 32">
+            <svg class="icon card-icon" viewBox="0 0 31 32">
               <use
                 xlink:href="./assets/icons/sprite.svg#icon-presentation"
               ></use>
@@ -323,7 +323,7 @@
 
           <!-- Card 5 -->
           <li class="card card-analytics-reporting">
-            <svg class="card-icon" viewBox="0 0 36 32">
+            <svg class="icon card-icon" viewBox="0 0 36 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-bargraph"></use>
             </svg>
             <h4 class="heading card-heading">Analytics<br />Reporting</h4>
@@ -360,7 +360,7 @@
 
           <!-- Card 6 -->
           <li class="card card-photography">
-            <svg class="card-icon" viewBox="0 0 42 32">
+            <svg class="icon card-icon" viewBox="0 0 42 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-camera"></use>
             </svg>
             <h4 class="heading card-heading">Photography<br />Videography</h4>
@@ -395,7 +395,7 @@
 
           <!-- Card 7 -->
           <li class="card card-community-management">
-            <svg class="card-icon" viewBox="0 0 32 32">
+            <svg class="icon card-icon" viewBox="0 0 32 32">
               <use xlink:href="./assets/icons/sprite.svg#icon-mobile"></use>
             </svg>
             <h4 class="heading card-heading">Community<br />Management</h4>
@@ -592,19 +592,27 @@
       <div class="footer-container">
         <!-- Left Side -->
         <div class="footer-left">
-          <p class="footer-contact-item">
-            <span class="footer-icon">✉</span>
-            <a href="mailto:office@siello.rs" class="footer-link"
-              >office@siello.rs</a
-            >
-          </p>
-          <p class="footer-contact-item">
-            <span class="footer-icon">📍</span>
-            <span>Belgrade, Serbia</span>
-          </p>
+          <div class="footer-contacts">
+            <div class="contact-item">
+              <svg class="icon contact-icon" viewBox="0 0 38 32">
+                <use xlink:href="./assets/icons/sprite.svg#icon-envelope"></use>
+              </svg>
+
+              <a href="mailto:office@siello.rs" class="footer-link"
+                >office@siello.rs</a
+              >
+            </div>
+            <div class="contact-item">
+              <svg class="icon contact-icon" viewBox="0 0 41 32">
+                <use xlink:href="./assets/icons/sprite.svg#icon-map"></use>
+              </svg>
+
+              <span>Belgrade, Serbia</span>
+            </div>
+          </div>
           <div class="footer-social">
-            <p class="subheading footer-title">Follow us on</p>
-            <div class="card-icons">
+            <h4 class="subheading footer-heading">Follow us on</h4>
+            <div class="social-icons">
               <!-- Replace # with actual social links -->
               <a href="#" class="social-link" aria-label="LinkedIn">
                 <svg class="social-icon">
@@ -642,7 +650,7 @@
 
         <!-- Right Side -->
         <div class="footer-right">
-          <p class="subheading footer-title">Navigation</p>
+          <p class="subheading footer-heading">Navigation</p>
           <ul class="footer-nav-list">
             <li><a href="#about" class="footer-nav-link">Who Are We</a></li>
             <li>
