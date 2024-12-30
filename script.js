@@ -145,28 +145,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (firstCard) {
-    // Get the computed styles of the first card
-    const cardStyles = window.getComputedStyle(firstCard);
+  if (firstCard && carousel) {
+    // Get the computed styles of the carousel (parent container)
+    const carouselStyles = window.getComputedStyle(carousel);
 
-    // Calculate the width including margin-right
-    const cardWidth =
-      firstCard.offsetWidth + parseFloat(cardStyles.marginRight);
+    // Retrieve the column-gap; fallback to gap or 0 if not defined
+    let columnGap = parseFloat(carouselStyles.columnGap);
+    if (isNaN(columnGap)) {
+      // If columnGap is not defined, try to get the general gap
+      const gapValues = carouselStyles.gap.split(" ");
+      columnGap =
+        gapValues.length > 1
+          ? parseFloat(gapValues[1])
+          : parseFloat(gapValues[0]) || 0;
+    }
 
-    // Define the scroll amount as the width of one card
-    const scrollAmount = cardWidth;
+    // Calculate the width including the column-gap
+    const cardWidth = firstCard.offsetWidth + columnGap;
 
     // Use scrollAmount for scrolling logic
     leftControl.addEventListener("click", () => {
       carousel.scrollBy({
-        left: -scrollAmount,
+        left: -cardWidth,
         behavior: "smooth",
       });
     });
 
     rightControl.addEventListener("click", () => {
       carousel.scrollBy({
-        left: scrollAmount,
+        left: cardWidth,
         behavior: "smooth",
       });
     });
