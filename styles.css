@@ -878,6 +878,11 @@ p:not(:first-of-type) {
   gap: var(--spacing-32);
 }
 
+.social-link {
+  display: flex;
+  height: 100%;
+}
+
 .social-link:hover .social-icon {
   fill: var(--color-orange);
 }
