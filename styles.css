@@ -277,6 +277,19 @@ p:not(:first-of-type) {
 /* ------------------------------------------------
    STICKY NAV
 --------------------------------------------------- */
+.offcanvas {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.offcanvas.visible {
+  background-color: var(--color-dark-opaque);
+  width: 30rem;
+}
+
 .sticky-nav {
   position: fixed;
   top: 9.8rem;
