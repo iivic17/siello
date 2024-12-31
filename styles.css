@@ -64,6 +64,8 @@
   --spacing-80: 8rem;
   --spacing-96: 9.6rem;
   --spacing-128: 12.8rem;
+
+  --bs-image-container: inset -1rem 0 3rem 3rem rgba(53, 45, 45, 0.05);
 }
 
 ::selection {
@@ -438,6 +440,7 @@ p:not(:first-of-type) {
   height: 100%;
   background-size: cover;
   background-position: center;
+  box-shadow: var(--bs-image-container);
 }
 
 /* ------------------------------------------------
@@ -456,6 +459,7 @@ p:not(:first-of-type) {
   grid-column: 1 / 5;
   position: relative;
   background: linear-gradient(rgb(249, 125, 3, 0.6), rgb(249, 125, 3, 0.6));
+  box-shadow: var(--bs-image-container);
 }
 
 .why-choose-us-section .image-container::before {
@@ -473,8 +477,7 @@ p:not(:first-of-type) {
   content: "";
   border: 0.7rem solid #e8d8c4;
   position: absolute;
-  min-width: 50%;
-  max-width: 60%;
+  min-width: 60%;
   aspect-ratio: 1 / 1;
   top: 50%;
   left: 50%;
@@ -509,6 +512,7 @@ p:not(:first-of-type) {
   padding-bottom: var(--spacing-96);
   position: relative;
   z-index: 0;
+  box-shadow: inset 0 0 2rem 2rem rgba(0, 0, 0, .03);
 }
 
 .services-section::before,
@@ -734,6 +738,7 @@ p:not(:first-of-type) {
   background-size: cover;
   background-position-y: bottom;
   background-position-x: center;
+  box-shadow: var(--bs-image-container);
 }
 
 /* ------------------------------------------------
@@ -811,6 +816,7 @@ p:not(:first-of-type) {
   grid-column: 7 / -1;
   position: relative;
   background: var(--color-dark);
+  box-shadow: var(--bs-image-container);
 }
 
 .next-level-section .image-container::before {
@@ -828,8 +834,7 @@ p:not(:first-of-type) {
   content: "";
   border: 0.7rem solid #e8d8c4;
   position: absolute;
-  min-width: 50%;
-  max-width: 60%;
+  min-width: 60%;
   aspect-ratio: 1 / 1;
   top: 50%;
   left: 50%;
