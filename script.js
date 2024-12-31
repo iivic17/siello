@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
-  const navLinks = document.querySelectorAll("a.nav-link");
-  const sections = document.querySelectorAll("section[id]");
+  const sections = document.querySelectorAll("section[id], header[id]");
 
   /* ---------------------------------------
    * 1. SMOOTH SCROLL for ANY # LINK
@@ -29,38 +28,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------------------------------------
-   * 2. HIGHLIGHT ACTIVE NAV LINK
-   *    (Intersection Observer)
+   * 2. HIGHLIGHT ACTIVE NAV LINK BASED ON SCROLL POSITION
    * --------------------------------------- */
-  const highlightOptions = {
-    root: null,
-    // rootMargin so highlight triggers around ~center of viewport
-    rootMargin: "-50% 0px -50% 0px",
-    threshold: 0,
-  };
+  // Function to determine the active section
+  const setActiveNavLink = () => {
+    let closestSection = null;
+    let minDistance = Number.POSITIVE_INFINITY;
 
-  const highlightObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      // If the current section is in view
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.getAttribute("id");
-        // Find the corresponding nav link
-        const navLink = document.querySelector(
-          `a.nav-link[href="#${sectionId}"]`
-        );
-        if (navLink) {
-          // Remove 'active' from all nav items
-          navLinks.forEach((link) => link.closest('li').classList.remove("active"));
-          // Set 'active' on the items that matches the current section
-          const navItem = navLink.closest('li');
-          navItem.classList.add("active");
-        }
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top);
+      if (distance < minDistance && rect.top <= window.innerHeight) {
+        minDistance = distance;
+        closestSection = section;
       }
     });
-  }, highlightOptions);
 
-  // Observe each section
-  sections.forEach((section) => highlightObserver.observe(section));
+    if (closestSection) {
+      const sectionId = closestSection.getAttribute("id");
+      const activeLink = document.querySelector(`a.nav-link[href="#${sectionId}"]`);
+
+      if (activeLink && activeLink !== currentActive) {
+        // Remove 'active' from the previously active nav item
+        if (currentActive) {
+          currentActive.closest('li').classList.remove("active");
+          currentActive.removeAttribute("aria-current");
+        }
+
+        // Add 'active' to the current nav item
+        activeLink.closest('li').classList.add("active");
+        activeLink.setAttribute("aria-current", "page");
+
+        // Update the current active link
+        currentActive = activeLink;
+      }
+    }
+  };
+
+  // Initialize current active link
+  let currentActive = null;
+
+  // Throttle the scroll event using requestAnimationFrame
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setActiveNavLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial call to set the active nav link
+  setActiveNavLink();
+
 
   /* ---------------------------------------
    * 3. ADD EXTRA LEFT/RIGHT MARGINS TO
