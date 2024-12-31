@@ -466,8 +466,9 @@ p:not(:first-of-type) {
   content: "";
   border: 0.7rem solid #e8d8c4;
   position: absolute;
-  width: 60%;
-  height: 60%;
+  min-width: 50%;
+  max-width: 60%;
+  aspect-ratio: 1 / 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -820,8 +821,9 @@ p:not(:first-of-type) {
   content: "";
   border: 0.7rem solid #e8d8c4;
   position: absolute;
-  width: 60%;
-  height: 60%;
+  min-width: 50%;
+  max-width: 60%;
+  aspect-ratio: 1 / 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
