@@ -868,6 +868,8 @@ p:not(:first-of-type) {
 }
 
 .contact-section .content-container {
+  gap: var(--spacing-56);
+  padding: var(--spacing-160) 0;
   grid-column: 4 / 8;
 }
 
@@ -875,11 +877,6 @@ p:not(:first-of-type) {
 .contact-heading {
   display: flex;
   flex-direction: column;
-}
-
-.content-container {
-  gap: var(--spacing-56);
-  padding: var(--spacing-160) 0;
 }
 
 .contact-heading {
