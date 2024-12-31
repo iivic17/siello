@@ -51,6 +51,7 @@
   --lh-subheading: 1;
   --lh-card-heading: 1;
   --lh-link: 1;
+  --lh-form-heading: 0.7;
 
   --spacing-2: 0.2rem;
   --spacing-4: 0.4rem;
@@ -65,6 +66,7 @@
   --spacing-80: 8rem;
   --spacing-96: 9.6rem;
   --spacing-128: 12.8rem;
+  --spacing-160: 16rem;
 
   --bs-image-container: inset -1rem 0 3rem 3rem rgba(53, 45, 45, 0.05);
 }
@@ -877,13 +879,14 @@ p:not(:first-of-type) {
 
 .content-container {
   gap: var(--spacing-56);
+  padding: var(--spacing-160) 0;
 }
 
 .contact-heading {
   text-transform: uppercase;
   color: var(--color-dark);
-  line-height: var(--lh-card-heading);
   text-align: center;
+  line-height: var(--lh-form-heading);
 }
 
 .contact-heading .highlight {
@@ -930,6 +933,7 @@ p:not(:first-of-type) {
   font-family: inherit;
   border: none;
   outline: none;
+  padding: var(--spacing-12) var(--spacing-16);
 }
 
 .contact-input::placeholder,
@@ -943,6 +947,13 @@ p:not(:first-of-type) {
 .contact-input:focus,
 .contact-textarea:focus {
   outline: 2px solid var(--color-orange);
+}
+
+.submit-btn {
+  height: 6rem;
+  font-size: var(--fz-base);
+  font-weight: 100;
+  margin-top: var(--spacing-24);
 }
 
 /* ------------------------------------------------
