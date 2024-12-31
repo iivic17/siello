@@ -427,7 +427,7 @@ p:not(:first-of-type) {
 .about-section .image-container {
   width: 100%;
   grid-column: 7 / -1;
-  background: url("./assets/images/about.jpg");
+  background: url("./assets/images/about.png");
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -446,7 +446,7 @@ p:not(:first-of-type) {
 .why-choose-us-section .image-container {
   width: 100%;
   grid-column: 1 / 5;
-  background: url("./assets/images/why-choose-us.jpg");
+  background: url("./assets/images/why-choose-us.png");
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -637,7 +637,7 @@ p:not(:first-of-type) {
 --------------------------------------------------- */
 .cta-section {
   text-align: center;
-  background: url("./assets/images/digital-voice.jpg");
+  background: url("./assets/images/digital-voice.png");
   background-size: cover;
   color: var(--color-light);
 }
@@ -774,7 +774,7 @@ p:not(:first-of-type) {
 .next-level-section .image-container {
   width: 100%;
   grid-column: 7 / -1;
-  background: url("./assets/images/next-level.jpg");
+  background: url("./assets/images/next-level-outer.png");
   height: 100%;
   background-size: cover;
   background-position: center;
