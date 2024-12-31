@@ -29,6 +29,7 @@
   --color-light-opaque: rgb(232, 216, 196, 0.7);
   --color-white: rgb(255, 255, 255);
   --color-gray: rgb(53, 45, 45, 0.5);
+  --color-light-gray: rgba(53, 45, 45, 0.3);
 
   --fz-tiny: 1.4rem;
   --fz-small: 1.6rem;
@@ -902,11 +903,16 @@ p:not(:first-of-type) {
 .contact-form {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-32);
 }
 
 .contact-label {
   text-transform: uppercase;
   color: var(--color-dark);
+  font-size: var(--fz-heading-xs);
+  font-family: var(--ff-grotesk);
+  line-height: var(--lh-link);
+  font-weight: 800;
 }
 
 .contact-section .btn {
@@ -928,9 +934,10 @@ p:not(:first-of-type) {
 
 .contact-input::placeholder,
 .contact-textarea::placeholder {
-  color: var(--color-gray);
+  color: var(--color-light-gray);
   font-size: inherit;
   font-family: inherit;
+  text-transform: uppercase;
 }
 
 .contact-input:focus,
