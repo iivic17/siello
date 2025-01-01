@@ -930,7 +930,6 @@ p:not(:first-of-type) {
   font-family: inherit;
   border: none;
   outline: none;
-  padding: var(--spacing-12) var(--spacing-16);
 }
 
 .contact-input::placeholder,
