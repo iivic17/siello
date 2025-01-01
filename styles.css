@@ -226,6 +226,13 @@ body {
   grid-column: 1 / -1;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .content-container {
+    padding-top: var(--spacing-96) !important;
+    padding-bottom: var(--spacing-96) !important;
+  }
+}
+
 /* ------------------------------------------------
    TYPOGRAPHY
 --------------------------------------------------- */
@@ -264,6 +271,14 @@ p:not(:first-of-type) {
   font-weight: 800;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .heading {
+    letter-spacing: -.5px;
+    white-space: normal;
+    text-overflow: unset;
+  }
 }
 
 .subheading {
@@ -696,6 +711,12 @@ p:not(:first-of-type) {
   box-shadow: var(--bs-image-container);
 }
 
+@media only screen and (max-width: 56.25em) {
+  .services-section {
+    padding: var(--spacing-96) 0;
+  }
+}
+
 .services-section::before,
 .services-section::after {
   content: "";
@@ -724,10 +745,29 @@ p:not(:first-of-type) {
   grid-column: 2 / 10;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .services-section .text-container {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: var(--spacing-16);
+  }
+}
+
+.services-heading {
+  margin-top: var(--spacing-2);
+}
+
 .services-section .text-container p {
   margin-top: 0;
   max-width: 35%;
   font-size: var(--fz-sub);
+}
+
+@media only screen and (max-width: 68.75em) {
+  .services-section .text-container p {
+    max-width: 60%;
+  }
 }
 
 .carousel-container {
@@ -763,6 +803,12 @@ p:not(:first-of-type) {
   box-shadow: var(--shadow-card);
 }
 
+@media only screen and (max-width: 56.25em) {
+  .card {
+    padding: var(--spacing-32);
+  }
+}
+
 .card-icon {
   height: 5rem;
   fill: var(--color-light);
@@ -785,6 +831,12 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 93.75em) {
   .card-text {
     max-width: 32rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .card-text {
+    max-width: 28rem;
   }
 }
 
@@ -823,6 +875,12 @@ p:not(:first-of-type) {
   grid-column: 2 / 10;
   gap: var(--spacing-16);
   margin-top: var(--spacing-32);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .controls-container {
+    display: none;
+  }
 }
 
 .controls {
