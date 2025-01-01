@@ -22,7 +22,7 @@ export const initNavHighlighter = () => {
   const sectionToNavLink = {};
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
-    if (href && href.startsWith("#")) {
+    if (href?.startsWith("#")) {
       const sectionId = href.slice(1);
       sectionToNavLink[sectionId] = link;
     }
