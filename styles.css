@@ -1446,6 +1446,7 @@ p:not(:first-of-type) {
   font-family: inherit;
   border: none;
   outline: none;
+  border-radius: 0;
 }
 
 .contact-input::placeholder,
