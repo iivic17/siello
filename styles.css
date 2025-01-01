@@ -490,6 +490,12 @@ p:not(:first-of-type) {
   margin-top: var(--spacing-64);
 }
 
+@media only screen and (max-width: 43.75em) {
+  .hero-heading br {
+    display: none;
+  }
+}
+
 .hero-content .btn {
   margin-top: var(--spacing-96);
 }
@@ -505,6 +511,13 @@ p:not(:first-of-type) {
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .hero-content .emphasized::after {
+    height: 10rem;
+    bottom: -10.5rem;
+  }
 }
 
 /* ------------------------------------------------
@@ -922,7 +935,6 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .card-text {
     font-size: var(--fz-base);
-    max-width: 35rem;
   }
 }
 
@@ -1530,6 +1542,12 @@ p:not(:first-of-type) {
 
 .footer-logo {
   max-width: 18.7rem;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .footer-logo {
+    max-width: 12rem;
+  }
 }
 
 .footer-contacts,
