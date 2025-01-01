@@ -155,6 +155,12 @@
   box-shadow: 0 0 0 0.8rem var(--color-orange-opaque);
 }
 
+@media only screen and (min-width: 125em) {
+  :root {
+    font-size: 67%;
+  }
+}
+
 /* ------------------------------------------------
    BODY & GRID LAYOUT
 --------------------------------------------------- */
@@ -588,6 +594,7 @@ p:not(:first-of-type) {
   background: var(--bg-why-choose-us-before);
   background-size: cover;
   background-position: center;
+  z-index: 5;
 }
 
 .why-choose-us-section .content-container {
@@ -598,6 +605,12 @@ p:not(:first-of-type) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media only screen and (min-width: 143.75em) {
+  .why-choose-us-section .image-container::after {
+    height: 110%;
+  }
 }
 
 /* ------------------------------------------------
@@ -850,6 +863,49 @@ p:not(:first-of-type) {
   box-shadow: var(--bs-image-container);
 }
 
+@media only screen and (min-width: 125em) {
+  .impact-section .image-container {
+    width: 100%;
+    height: 100%;
+    grid-column: 7 / -1;
+    position: relative;
+    background: var(--bg-impact);
+    box-shadow: var(--bs-image-container);
+  }
+  
+  .impact-section .image-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    background: var(--bg-impact);
+    background-size: cover;
+    background-position: bottom;
+  }
+  
+  .impact-section .image-container::after {
+    content: "";
+    border: 0.7rem solid #e8d8c4;
+    position: absolute;
+    min-width: 60%;
+    aspect-ratio: 1 / 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-impact);
+    background-size: cover;
+    background-position: bottom;
+    z-index: 5;
+  }
+}
+
+@media only screen and (min-width: 143.75em) {
+  .impact-section .image-container::after {
+    height: 110%;
+  }
+}
+
 /* ------------------------------------------------
    DIGITAL PRESENCE SECTION
 --------------------------------------------------- */
@@ -954,6 +1010,13 @@ p:not(:first-of-type) {
   background: var(--bg-next-level-inner);
   background-size: cover;
   background-position: center;
+  z-index: 5;
+}
+
+@media only screen and (min-width: 143.75em) {
+  .next-level-section .image-container::after {
+    height: 110%;
+  }
 }
 
 /* ------------------------------------------------
