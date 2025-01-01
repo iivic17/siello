@@ -263,9 +263,6 @@ body {
     grid-column: 1 / -1 !important;
     height: 20vw !important;
     background-attachment: fixed !important;
-    background-size: 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat;
   }
 }
 
@@ -738,7 +735,6 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .why-choose-us-section .image-container::before {
     background-attachment: fixed;
-    background-size: 100%;
   }
 
   .why-choose-us-section .image-container::after {
@@ -1361,7 +1357,6 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .next-level-section .image-container::before {
     background-attachment: fixed;
-    background-size: 100%;
   }
 
   .next-level-section .image-container::after {
