@@ -954,6 +954,7 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .about-section .image-container {
     background-size: 100%;
+    background-attachment: initial !important;
   }
 }
 
@@ -1023,8 +1024,9 @@ p:not(:first-of-type) {
 
 @media only screen and (max-width: 43.75em) {
   .why-choose-us-section .image-container::before {
-    background-attachment: fixed;
+    background-position: center;
     background-size: 100%;
+    background-attachment: initial !important;
   }
 
   .why-choose-us-section .image-container::after {
@@ -1646,8 +1648,9 @@ p:not(:first-of-type) {
 
 @media only screen and (max-width: 43.75em) {
   .next-level-section .image-container::before {
-    background-attachment: fixed;
     background-size: 100%;
+    background-position: center;
+    background-attachment: initial !important;
   }
 
   .next-level-section .image-container::after {
