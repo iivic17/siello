@@ -1,16 +1,18 @@
 // js/mobileNavVisibility.js
 
 /**
- * Initializes the mobile navigation visibility control.
- * Ensures that the mobile nav is hidden on initial load to prevent FOUC.
+ * Initializes the mobile navigation visibility to prevent FOUC.
+ * Removes the 'js-hidden' class from the mobile nav to reveal it after CSS is loaded.
  */
 export const initMobileNavVisibility = () => {
   const mobileNav = document.querySelector(".mobile-nav");
-
-  if (!mobileNav) {
-    console.warn('Element with class "mobile-nav" not found.');
-    return;
+  if (mobileNav) {
+    mobileNav.classList.remove("js-hidden");
   }
-
-  mobileNav.classList.remove("js-hidden");
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  queueMicrotask(() => {
+    initMobileNavVisibility();
+  });
+});

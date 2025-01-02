@@ -651,7 +651,6 @@ p:not(:first-of-type) {
   top: 6rem;
   right: 6rem;
   z-index: 9999;
-  transition: all 0.3s ease;
 }
 
 .mobile-nav-background {
@@ -683,10 +682,6 @@ p:not(:first-of-type) {
   visibility: hidden;
 	opacity: 0;
 	pointer-events: none;
-}
-
-.mobile-nav-navigation.js-hidden {
-  display: none;
 }
 
 .mobile-nav-list {
