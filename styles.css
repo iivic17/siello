@@ -104,17 +104,18 @@
   --bg-why-choose-us-before: url("./assets/images/why-choose-us.png");
   --bg-next-level-outer: url("./assets/images/next-level-outer.png");
   --bg-next-level-inner: url("./assets/images/next-level-inner.png");
-  --bg-carousel: url("./assets/images/carousel-background.png");
+  --bg-carousel: url("./assets/images/carousel-background.jpg");
   --bg-contact: url("./assets/images/form-background.jpg");
   --bg-digital-presence: url("./assets/images/digital-presence.png");
   --bg-cta: linear-gradient(rgba(66, 35, 7, 0.35), rgba(66, 35, 7, 0.35)),
-    url("./assets/images/digital-voice.png");
+    url("./assets/images/digital-voice.jpg");
   --bg-impact: linear-gradient(
       to bottom right,
       rgba(249, 125, 3, 0.15),
       rgba(249, 125, 3, 0.1)
     ),
-    url("./assets/images/impact.jpg");
+    url("./assets/images/impact.png");
+  --bg-hero-poster: url("./assets/images/hero-poster-mobile.png");
 
   /* Transitions */
   --transition-duration: 0.3s;
@@ -193,6 +194,20 @@
         rgba(39, 39, 39, 0.4) 0%,
         rgba(53, 45, 45, 0.7) 100%
       );
+    --bg-about: linear-gradient(rgba(53, 45, 45, 0.15), rgba(53, 45, 45, 0.15)),
+      url("./assets/images/about-mobile.jpg");
+    --bg-why-choose-us-before: url("./assets/images/why-choose-us-mobile.jpg");
+    --bg-next-level-outer: url("./assets/images/next-level-mobile.jpg");
+    --bg-carousel: url("./assets/images/carousel-background-mobile.jpg");
+    --bg-contact: url("./assets/images/form-background-mobile.jpg");
+    --bg-cta: linear-gradient(rgba(66, 35, 7, 0.35), rgba(66, 35, 7, 0.35)),
+      url("./assets/images/digital-voice-mobile.jpg");
+    --bg-impact: linear-gradient(
+        to bottom right,
+        rgba(249, 125, 3, 0.15),
+        rgba(249, 125, 3, 0.1)
+      ),
+      url("./assets/images/impact-mobile.jpg");
   }
 }
 
@@ -313,6 +328,7 @@ body {
   .image-container {
     grid-column: 1 / -1 !important;
     height: 15vw !important;
+    border: 5px solid var(--color-light);
   }
 }
 
@@ -511,7 +527,7 @@ p:not(:first-of-type) {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: url('./assets/images/hero-poster.png') no-repeat center center;
+  background: var(--bg-hero-poster) no-repeat center center;
   background-size: cover;
 }
 
@@ -1450,13 +1466,6 @@ p:not(:first-of-type) {
   background-size: cover;
   background-position: center bottom;
   box-shadow: var(--bs-image-container);
-}
-
-@media only screen and (max-width: 43.75em) {
-  .impact-section .image-container {
-    background-size: 300%;
-    background-position-y: 80rem;
-  }
 }
 
 @media only screen and (min-width: 125em) {
