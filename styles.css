@@ -312,7 +312,7 @@ body {
 
   .image-container {
     grid-column: 1 / -1 !important;
-    height: 12vw !important;
+    height: 15vw !important;
     background-attachment: fixed !important;
   }
 }
