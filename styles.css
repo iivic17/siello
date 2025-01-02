@@ -313,7 +313,6 @@ body {
   .image-container {
     grid-column: 1 / -1 !important;
     height: 15vw !important;
-    background-attachment: fixed !important;
   }
 }
 
@@ -980,7 +979,6 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .about-section .image-container {
     background-size: 100%;
-    background-attachment: initial !important;
   }
 }
 
@@ -1454,6 +1452,13 @@ p:not(:first-of-type) {
   box-shadow: var(--bs-image-container);
 }
 
+@media only screen and (max-width: 43.75em) {
+  .impact-section .image-container {
+    background-size: 300%;
+    background-position-y: 80rem;
+  }
+}
+
 @media only screen and (min-width: 125em) {
   .impact-section .image-container {
     width: 100%;
@@ -1676,7 +1681,6 @@ p:not(:first-of-type) {
   .next-level-section .image-container::before {
     background-size: 100%;
     background-position: center;
-    background-attachment: initial !important;
   }
 
   .next-level-section .image-container::after {
