@@ -1,5 +1,7 @@
 // js/stickyNav.js
 
+let navObserver = null;
+
 /**
  * Initializes the sticky navigation bar using IntersectionObserver.
  */
@@ -12,7 +14,12 @@ export const initStickyNav = () => {
     return;
   }
 
-  const navObserver = new IntersectionObserver(
+  // Prevent multiple observers
+  if (navObserver) {
+    return;
+  }
+
+  navObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         nav.classList.toggle("fixed", !entry.isIntersecting);
@@ -25,4 +32,19 @@ export const initStickyNav = () => {
   );
 
   navObserver.observe(sentinel);
+};
+
+/**
+ * Destroys the sticky navigation by disconnecting the IntersectionObserver.
+ */
+export const destroyStickyNav = () => {
+  if (navObserver) {
+    navObserver.disconnect();
+    navObserver = null;
+  }
+
+  const nav = document.querySelector(".sticky-nav");
+  if (nav) {
+    nav.classList.remove("fixed");
+  }
 };

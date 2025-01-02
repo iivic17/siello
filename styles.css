@@ -536,7 +536,7 @@ p:not(:first-of-type) {
 
 @media only screen and (max-width: 81.25em) {
   .sticky-nav {
-    visibility: hidden;
+    display: none;
   }
 }
 
