@@ -768,7 +768,7 @@ p:not(:first-of-type) {
   top: 6.5rem;
   right: 6.5rem;
   border-radius: 50%;
-  background-image: radial-gradient(rgb(53, 45, 45), rgba(43, 38, 38, 0.8));
+  background-image: radial-gradient(rgb(53, 45, 45), rgba(43, 38, 38, 0.9));
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   backface-visibility: hidden;
   z-index: 9997;
