@@ -5,10 +5,10 @@
  * Ensures that the mobile nav is hidden on initial load to prevent FOUC.
  */
 export const initMobileNavVisibility = () => {
-  const mobileNav = document.querySelector(".mobile-nav-navigation");
+  const mobileNav = document.querySelector(".mobile-nav");
 
   if (!mobileNav) {
-    console.warn('Element with class "mobile-nav-navigation" not found.');
+    console.warn('Element with class "mobile-nav" not found.');
     return;
   }
 
