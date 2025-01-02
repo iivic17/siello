@@ -626,6 +626,182 @@ p:not(:first-of-type) {
 }
 
 /* ------------------------------------------------
+   MOBILE NAV
+--------------------------------------------------- */
+
+@media only screen and (min-width: 81.25em) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+.mobile-nav-checkbox {
+  display: none;
+}
+
+.mobile-nav-button {
+  cursor: pointer;
+  position: fixed;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--color-light);
+  box-shadow: 0 .5rem 3rem rgba(53, 45, 45, 0.3);
+  width: 7rem;
+  height: 7rem;
+  top: 6rem;
+  right: 6rem;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-background {
+  height: 6rem;
+  width: 6rem;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    rgb(53, 45, 45),
+    rgba(43, 38, 38, 0.8)
+  );
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  backface-visibility: hidden;
+  z-index: 9997;
+}
+
+.mobile-nav-navigation {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9998;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backface-visibility: hidden;
+
+  visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.mobile-nav-list {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-nav-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-link,
+.mobile-nav-link:link,
+.mobile-nav-link:visited {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-light);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      var(--color-orange) 50%
+  );
+
+  background-size: 250%;
+  transition: all 0.5s ease;
+}
+
+.mobile-nav-link span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background-position: 100%;
+  color: var(--color-white);
+  transform: translateX(1rem);
+}
+
+.mobile-nav-checkbox:checked ~ .mobile-nav-background {
+  transform: scale(80);
+}
+
+.mobile-nav-checkbox:checked ~ .mobile-nav-navigation {
+  visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+  width: 100%;
+}
+
+.mobile-nav-icon {
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.mobile-nav-icon,
+.mobile-nav-icon::before,
+.mobile-nav-icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--color-dark);
+  display: inline-block;
+  position: absolute;
+}
+
+.mobile-nav-icon::before,
+.mobile-nav-icon::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-icon::before {
+  top: -0.8rem;
+}
+
+.mobile-nav-icon::after {
+  top: 0.8rem;
+}
+
+.mobile-nav-button:hover > .mobile-nav-icon::before,
+.mobile-nav-button:focus > .mobile-nav-icon::before {
+  top: -1rem;
+}
+
+.mobile-nav-button:hover > .mobile-nav-icon::after,
+.mobile-nav-button:focus > .mobile-nav-icon::after {
+  top: 1rem;
+}
+
+.mobile-nav-checkbox:checked + .mobile-nav-button > .mobile-nav-icon {
+  background-color: transparent;
+}
+
+.mobile-nav-checkbox:checked + .mobile-nav-button > .mobile-nav-icon:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.mobile-nav-checkbox:checked + .mobile-nav-button > .mobile-nav-icon:after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+/* ------------------------------------------------
    ABOUT SECTION
 --------------------------------------------------- */
 
