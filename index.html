@@ -33,6 +33,7 @@
 
     <script type="module" src="js/main.js" defer></script>
     <script type="module" src="js/mobileNavVisibility.js" defer></script>
+    <script type="module" src="js/videoHandler.js" defer></script>
   </head>
 
   <body>
@@ -136,6 +137,9 @@
           loop
           poster="./assets/images/hero-poster.png"
           class="hero-video"
+          playsinline
+          webkit-playsinline
+          loading="lazy"
         >
           <source src="./assets/hero-video.mp4" type="video/mp4" />
           <p>

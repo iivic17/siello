@@ -265,6 +265,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -311,7 +312,7 @@ body {
 
   .image-container {
     grid-column: 1 / -1 !important;
-    height: 15vw !important;
+    height: 12vw !important;
     background-attachment: fixed !important;
   }
 }
@@ -504,6 +505,31 @@ p:not(:first-of-type) {
   object-fit: cover;
   z-index: 1;
   background-color: var(--color-gray);
+}
+
+.hero-video.video-disabled {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: url('./assets/images/hero-poster.png') no-repeat center center;
+  background-size: cover;
+}
+
+.hero-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-video::-moz-media-controls {
+  display: none !important;
+}
+
+.hero-video::-ms-media-controls {
+  display: none !important;
+}
+
+.hero-video::-o-media-controls {
+  display: none !important;
 }
 
 .hero-content {
