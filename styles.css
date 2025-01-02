@@ -528,7 +528,7 @@ p:not(:first-of-type) {
 .sticky-nav {
   position: fixed;
   top: 9.8rem;
-  right: 4.7rem;
+  right: 3rem;
   z-index: var(--z-index-sticky-nav);
   transition: all 1s;
   display: flex;
@@ -585,6 +585,7 @@ p:not(:first-of-type) {
 }
 
 .nav-link {
+  text-shadow: 1px 1px 1px rgba(53, 45, 45, 0.5);
   display: inline-block;
   text-transform: uppercase;
   font-optical-sizing: auto;
@@ -604,6 +605,8 @@ p:not(:first-of-type) {
   height: 0.8rem;
   fill: var(--color-light);
   transition: var(--controls-transition);
+  border: 1px solid rgba(53, 45, 45, 0.5);
+  border-radius: 50%;
 }
 
 .nav-item:hover .nav-link,
@@ -616,6 +619,10 @@ p:not(:first-of-type) {
 .nav-item.active .nav-icon {
   color: var(--color-orange);
   fill: var(--color-orange);
+}
+
+.nav-item.active .nav-icon {
+  border: none;
 }
 
 /* ------------------------------------------------
