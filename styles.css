@@ -685,6 +685,10 @@ p:not(:first-of-type) {
 	pointer-events: none;
 }
 
+.mobile-nav-navigation.js-hidden {
+  display: none;
+}
+
 .mobile-nav-list {
 	position: absolute;
 	top: 50%;
@@ -729,7 +733,6 @@ p:not(:first-of-type) {
 .mobile-nav-link:hover,
 .mobile-nav-link:active {
   background-position: 100%;
-  color: var(--color-white);
   transform: translateX(1rem);
 }
 

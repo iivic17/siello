@@ -6,6 +6,7 @@ import { initCarousel } from "./carousel.js";
 import { initStickyNav, destroyStickyNav } from "./stickyNav.js";
 import { setSvgAspectRatios } from "./svgAspectRatio.js";
 import { initMobileNav } from "./mobileNav.js";
+import { initMobileNavVisibility } from "./mobileNavVisibility.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCarousel();
   setSvgAspectRatios();
   initMobileNav();
+  initMobileNavVisibility();
 
   // Define the media query
   const stickyNavMediaQuery = window.matchMedia("(min-width: 81.25em)");
