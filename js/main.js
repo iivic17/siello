@@ -5,12 +5,14 @@ import { initNavHighlighter } from "./navHighlighter.js";
 import { initCarousel } from "./carousel.js";
 import { initStickyNav, destroyStickyNav } from "./stickyNav.js";
 import { setSvgAspectRatios } from "./svgAspectRatio.js";
+import { initMobileNav } from "./mobileNav.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initNavHighlighter();
   initCarousel();
   setSvgAspectRatios();
+  initMobileNav();
 
   // Define the media query
   const stickyNavMediaQuery = window.matchMedia("(min-width: 81.25em)");
