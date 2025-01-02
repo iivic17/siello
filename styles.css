@@ -178,21 +178,21 @@
     --fz-heading-xl: 3.6rem;
 
     --bg-hero-overlay: radial-gradient(
-      closest-side,
-      rgba(100, 65, 30, 0) 0%,
-      rgba(54, 20, 14, 0.3) 100%
-    ),
-    linear-gradient(
-      to top left,
-      rgba(0, 0, 0, 0.42) 0%,
-      rgba(0, 0, 0, 0.32) 70%,
-      rgba(249, 125, 3, 0.2) 100%
-    ),
-    linear-gradient(
-      to top left,
-      rgba(39, 39, 39, 0.4) 0%,
-      rgba(53, 45, 45, 0.7) 100%
-    );
+        closest-side,
+        rgba(100, 65, 30, 0) 0%,
+        rgba(54, 20, 14, 0.3) 100%
+      ),
+      linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.32) 70%,
+        rgba(249, 125, 3, 0.2) 100%
+      ),
+      linear-gradient(
+        to top left,
+        rgba(39, 39, 39, 0.4) 0%,
+        rgba(53, 45, 45, 0.7) 100%
+      );
   }
 }
 
@@ -951,6 +951,12 @@ p:not(:first-of-type) {
   box-shadow: var(--bs-image-container);
 }
 
+@media only screen and (max-width: 43.75em) {
+  .about-section .image-container {
+    background-size: 100%;
+  }
+}
+
 /* ------------------------------------------------
    WHY CHOOSE US SECTION
 --------------------------------------------------- */
@@ -1018,6 +1024,7 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .why-choose-us-section .image-container::before {
     background-attachment: fixed;
+    background-size: 100%;
   }
 
   .why-choose-us-section .image-container::after {
@@ -1640,6 +1647,7 @@ p:not(:first-of-type) {
 @media only screen and (max-width: 43.75em) {
   .next-level-section .image-container::before {
     background-attachment: fixed;
+    background-size: 100%;
   }
 
   .next-level-section .image-container::after {
