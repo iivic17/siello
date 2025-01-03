@@ -211,6 +211,12 @@
   }
 }
 
+@media only screen and (max-width: 25em) {
+  :root {
+    font-size: 45%;
+  }
+}
+
 /* Selection Styling */
 ::selection {
   background-color: var(--color-orange-opaque);
@@ -390,6 +396,13 @@ p:not(:first-of-type) {
   font-weight: 200;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .subheading {
+    white-space: unset;
+    text-overflow: unset;
+  }
 }
 
 .subheading + .heading {
@@ -1282,6 +1295,12 @@ p:not(:first-of-type) {
   gap: var(--spacing-16);
 }
 
+@media only screen and (max-width: 43.75em) {
+  .card-list {
+    gap: var(--spacing-4);
+  }
+}
+
 .card li {
   display: flex;
   align-items: center;
@@ -1305,7 +1324,7 @@ p:not(:first-of-type) {
 
 @media only screen and (max-width: 43.75em) {
   .card .list-text {
-    font-size: var(--fz-heading-xs);
+    font-size: var(--fz-base);
   }
 }
 
@@ -1598,6 +1617,17 @@ p:not(:first-of-type) {
   font-weight: 1000;
   font-size: var(--fz-heading-s);
   letter-spacing: -2px;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .digital-presence-subheading  {
+    letter-spacing: 0;
+    font-weight: 800;
+  }
+
+  .digital-presence-subheading br  {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------
